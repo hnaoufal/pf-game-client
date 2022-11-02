@@ -1,4 +1,4 @@
-package com.pr.gameclient.models.persons;
+package com.pr.gameclient;
 
 import java.util.Vector;
 

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/17">
    <children>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: darkgrey;">
          <children>
@@ -27,7 +27,7 @@
                </opaqueInsets>
             </Label>
             <AnchorPane layoutX="15.0" layoutY="14.0" />
-            <Button layoutX="40.0" layoutY="173.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: darkgrey;" text="Anleitung" textFill="#26262f">
+            <Button layoutX="40.0" layoutY="173.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: darkgrey;" text="Anleitung" textFill="#222222">
                <font>
                   <Font name="Corbel Bold" size="14.0" />
                </font>
@@ -48,7 +48,7 @@
                   <Insets />
                </opaqueInsets>
             </Label>
-            <Button layoutX="320.0" layoutY="173.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: darkgrey;" text="Polizist" textFill="#26262f">
+            <Button layoutX="320.0" layoutY="173.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: darkgrey;" text="Polizist" textFill="#222222">
                <font>
                   <Font name="Corbel Bold" size="14.0" />
                </font>
@@ -69,7 +69,7 @@
                   <Insets />
                </opaqueInsets>
             </Label>
-            <Button layoutX="180.0" layoutY="173.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: darkgrey;" text="Leicht" textFill="#26262f">
+            <Button layoutX="180.0" layoutY="173.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: darkgrey;" text="Leicht" textFill="#222222">
                <font>
                   <Font name="Corbel Bold" size="14.0" />
                </font>
@@ -90,7 +90,7 @@
                   <Insets />
                </opaqueInsets>
             </Label>
-            <Button layoutX="460.0" layoutY="173.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: darkgrey;" text="Polizist" textFill="#26262f">
+            <Button layoutX="460.0" layoutY="173.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: darkgrey;" text="Polizist" textFill="#222222">
                <font>
                   <Font name="Corbel Bold" size="14.0" />
                </font>
@@ -103,7 +103,7 @@
                   <Insets />
                </opaqueInsets>
             </Label>
-            <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="20.0" prefHeight="55.0" prefWidth="320.0" style="-fx-background-color: darkgrey;" text="Game Settings" textFill="#55546f">
+            <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="20.0" prefHeight="55.0" prefWidth="320.0" style="-fx-background-color: darkgrey;" text="Game Settings" textFill="#4d4d4d">
                <font>
                   <Font name="Corbel Bold" size="30.0" />
                </font>
@@ -111,27 +111,27 @@
                   <Insets />
                </opaqueInsets>
             </Label>
-            <Button layoutX="320.0" layoutY="214.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: darkgrey;" text="Räuber" textFill="#26262f">
+            <Button layoutX="320.0" layoutY="214.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: darkgrey;" text="Räuber" textFill="#222222">
                <font>
                   <Font name="Corbel Bold" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="180.0" layoutY="214.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: darkgrey;" text="Mittel" textFill="#26262f">
+            <Button layoutX="180.0" layoutY="214.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: darkgrey;" text="Mittel" textFill="#222222">
                <font>
                   <Font name="Corbel Bold" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="460.0" layoutY="214.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: darkgrey;" text="Räuber" textFill="#26262f">
+            <Button layoutX="460.0" layoutY="214.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: darkgrey;" text="Räuber" textFill="#222222">
                <font>
                   <Font name="Corbel Bold" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="40.0" layoutY="214.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: darkgrey;" text="Dein Konto" textFill="#26262f">
+            <Button layoutX="40.0" layoutY="214.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: darkgrey;" text="Dein Konto" textFill="#222222">
                <font>
                   <Font name="Corbel Bold" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="180.0" layoutY="254.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: darkgrey;" text="Schwer" textFill="#26262f">
+            <Button layoutX="180.0" layoutY="254.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: darkgrey;" text="Schwer" textFill="#222222">
                <font>
                   <Font name="Corbel Bold" size="14.0" />
                </font>

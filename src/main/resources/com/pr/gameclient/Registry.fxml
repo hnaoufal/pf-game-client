@@ -41,7 +41,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="331.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="331.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17">
   <children>
     <AnchorPane focusTraversable="true" maxHeight="-1.0" maxWidth="-1.0" prefHeight="247.0" prefWidth="500.0" style="-fx-background-color: grey;" VBox.vgrow="ALWAYS">
       <children>

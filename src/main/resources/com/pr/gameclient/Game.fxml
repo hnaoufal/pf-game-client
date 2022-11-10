@@ -47,93 +47,93 @@
                   <Image url="@../Grafiken/Rechteck.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="48.0" fitWidth="31.0" layoutX="553.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="48.0" fitWidth="31.0" layoutX="553.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Grafiken/Geldsack.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="53.0" fitWidth="48.0" layoutX="8.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="53.0" fitWidth="48.0" layoutX="6.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Grafiken/Waffe.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="48.0" fitWidth="40.0" layoutX="12.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="48.0" fitWidth="40.0" layoutX="14.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Grafiken/Handschellen.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="6.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="6.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Grafiken/Schlagstock.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="40.0" fitWidth="63.0" layoutX="539.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true" rotate="330.0">
+            <ImageView fitHeight="40.0" fitWidth="63.0" layoutX="538.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true" rotate="330.0">
                <image>
                   <Image url="@../Grafiken/Brechstange.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="544.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="544.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Grafiken/Waffe.png" />
                </image>
             </ImageView>
-            <Label layoutX="19.0" layoutY="11.0" text="Officer" textFill="#5c5c5c">
+            <Label layoutX="19.0" layoutY="11.0" text="Officer" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="22.0" />
                </font>
             </Label>
-            <Label layoutX="519.0" layoutY="11.0" text="Robber" textFill="#5e5e5e">
+            <Label layoutX="519.0" layoutY="11.0" text="Robber" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="22.0" />
                </font>
             </Label>
             <ImageView fitHeight="60.0" fitWidth="60.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="12.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="14.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Grafiken/Herz.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="548.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="548.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Grafiken/Herz.png" />
                </image>
             </ImageView>
-            <Label layoutX="510.0" layoutY="129.0" text="3/10" textFill="#5e5e5e">
+            <Label layoutX="510.0" layoutY="130.0" text="3/10" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="510.0" layoutY="68.0" text="4/10" textFill="#5e5e5e">
+            <Label layoutX="510.0" layoutY="68.0" text="4/10" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="510.0" layoutY="194.0" text="3/10" textFill="#5e5e5e">
+            <Label layoutX="510.0" layoutY="191.0" text="3/10" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="510.0" layoutY="254.0" text="90 %" textFill="#5e5e5e">
+            <Label layoutX="510.0" layoutY="253.0" text="90 %" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="63.0" layoutY="130.0" text="3/10" textFill="#5e5e5e">
+            <Label layoutX="63.0" layoutY="130.0" text="3/10" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="63.0" layoutY="68.0" text="4/10" textFill="#5e5e5e">
+            <Label layoutX="63.0" layoutY="68.0" text="4/10" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="63.0" layoutY="191.0" text="3/10" textFill="#5e5e5e">
+            <Label layoutX="63.0" layoutY="191.0" text="3/10" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="63.0" layoutY="253.0" text="60 %" textFill="#5e5e5e">
+            <Label layoutX="63.0" layoutY="253.0" text="60 %" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="14.0" />
                </font>

@@ -47,12 +47,12 @@
                         <Font name="Corbel Bold" size="16.0" />
                      </font>
                   </Button>
-                  <Button layoutX="440.0" layoutY="237.0" mnemonicParsing="false" onAction="#onButtonZurRegistrierung" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" text="Registrierung" textFill="#464646">
+                  <Button layoutX="440.0" layoutY="283.0" mnemonicParsing="false" onAction="#onButtonBeenden" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" text="Beenden" textFill="#464646">
                      <font>
                         <Font name="Corbel Bold" size="16.0" />
                      </font>
                   </Button>
-                  <Button layoutX="440.0" layoutY="283.0" mnemonicParsing="false" onAction="#onButtonBeenden" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" text="Beenden" textFill="#464646">
+                  <Button layoutX="440.0" layoutY="237.0" mnemonicParsing="false" onAction="#onButtonZurRegistrierung" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" text="Registrierung" textFill="#464646">
                      <font>
                         <Font name="Corbel Bold" size="16.0" />
                      </font>

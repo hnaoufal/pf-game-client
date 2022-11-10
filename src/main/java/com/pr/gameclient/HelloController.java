@@ -1,5 +1,6 @@
 package com.pr.gameclient;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,10 +10,10 @@ import javafx.stage.Stage;
 public class HelloController {
 
     @FXML
-    private FXMLLoader fxmlLoader;
-    private Parent root;
-    private Scene sceneSwitcher;
     private Stage stage;
+    private Scene sceneSwitcher;
+    private Parent root;
+    private FXMLLoader fxmlLoader;
 
     public void setStage(Stage stage) {
         this.stage = stage;
@@ -20,7 +21,7 @@ public class HelloController {
 
     // Zur Beschreibung
     @FXML
-    protected void onButtonBeschreibung() throws Exception {
+    protected void onButtonBeschreibung(ActionEvent event) throws Exception {
 
         fxmlLoader = new FXMLLoader(getClass().getResource("Description.fxml"));
         root = fxmlLoader.load();
@@ -48,9 +49,9 @@ public class HelloController {
         sceneSwitcher.setRoot(root);
     }
 
-    // Zurück zum Startfenster
+    // Zurück zum Startseite
     @FXML
-    protected void onButtonStart() throws Exception {
+    protected void onButtonZurStartseite() throws Exception {
 
         fxmlLoader = new FXMLLoader(getClass().getResource("Start.fxml"));
         root = fxmlLoader.load();
@@ -58,21 +59,21 @@ public class HelloController {
         sceneSwitcher.setRoot(root);
     }
 
-    // Login und zum Fenster "Game" springen
+    // Login und zur Seite "Settings" springen
     @FXML
     public void onButtonLogin() throws Exception {
 
-        fxmlLoader = new FXMLLoader(getClass().getResource("Game.fxml"));
+        fxmlLoader = new FXMLLoader(getClass().getResource("Settings.fxml"));
         root = fxmlLoader.load();
         sceneSwitcher = stage.getScene();
         sceneSwitcher.setRoot(root);
     }
 
-    // Registrierung und zum Fenster "Game" springen
+    // Registrierung und zur Seite "Settings" springen
     @FXML
     public void onButtonRegistrierung() throws Exception {
 
-        fxmlLoader = new FXMLLoader(getClass().getResource("Game.fxml"));
+        fxmlLoader = new FXMLLoader(getClass().getResource("Settings.fxml"));
         root = fxmlLoader.load();
         sceneSwitcher = stage.getScene();
         sceneSwitcher.setRoot(root);

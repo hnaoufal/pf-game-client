@@ -41,43 +41,43 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="331.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17">
-  <children>
-    <AnchorPane focusTraversable="true" maxHeight="-1.0" maxWidth="-1.0" prefHeight="247.0" prefWidth="500.0" style="-fx-background-color: grey;" VBox.vgrow="ALWAYS">
-      <children>
-            <ImageView fitHeight="250.0" fitWidth="556.0" pickOnBounds="true" preserveRatio="true">
+<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pr.gameclient.HelloController">
+   <children>
+      <AnchorPane focusTraversable="true" maxHeight="-1.0" maxWidth="-1.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: darkgrey;" VBox.vgrow="ALWAYS">
+         <children>
+            <ImageView fitHeight="250.0" fitWidth="550.0" layoutX="50.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
                <image>
                   <Image url="@../Grafiken/Absperrband.jpg" />
                </image>
             </ImageView>
-            <TextField layoutX="160.0" layoutY="148.0" prefHeight="25.0" prefWidth="180.0" />
-            <Text fill="WHITE" layoutX="160.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passwort">
-               <font>
-                  <Font name="Corbel" size="14.0" />
-               </font>
-            </Text>
-            <TextField layoutX="160.0" layoutY="95.0" prefHeight="25.0" prefWidth="180.0" />
-            <Text fill="WHITE" layoutX="160.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Benutzername">
-               <font>
-                  <Font name="Corbel" size="14.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="160.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="game">
+            <TextField layoutX="210.0" layoutY="197.0" prefHeight="25.0" prefWidth="180.0" />
+            <TextField layoutX="210.0" layoutY="144.0" prefHeight="25.0" prefWidth="180.0" />
+            <Text fill="WHITE" layoutX="222.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="game">
                <font>
                   <Font name="Corbel Bold Italic" size="30.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="229.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
+            <Text fill="WHITE" layoutX="291.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
                <font>
                   <Font name="Corbel Bold" size="36.0" />
                </font>
             </Text>
-            <Button layoutX="166.0" layoutY="275.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Login" textFill="#3c3c3c">
+            <Text fill="WHITE" layoutX="209.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Benutzername">
                <font>
-                  <Font name="Corbel" size="14.0" />
+                  <Font name="Corbel Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="210.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passwort">
+               <font>
+                  <Font name="Corbel Bold" size="14.0" />
+               </font>
+            </Text>
+            <Button layoutX="241.0" layoutY="246.0" mnemonicParsing="false" onAction="#onButtonLogin" prefHeight="30.0" prefWidth="120.0" text="Login" textFill="#464646">
+               <font>
+                  <Font name="Corbel Bold" size="14.0" />
                </font>
             </Button>
-      </children>
-    </AnchorPane>
-  </children>
+         </children>
+      </AnchorPane>
+   </children>
 </VBox>

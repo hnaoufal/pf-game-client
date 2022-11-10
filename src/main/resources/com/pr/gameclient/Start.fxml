@@ -6,51 +6,60 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pr.gameclient.HelloController">
-   <children>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: darkgrey;">
+<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pr.gameclient.HelloController">
+   <center>
+      <AnchorPane style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Grafiken/Dieb_gefasst.jpg" />
-               </image>
-            </ImageView>
-            <AnchorPane layoutX="15.0" layoutY="14.0" />
-            <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="425.0" layoutY="115.0" opacity="0.6" prefHeight="170.0" prefWidth="150.0" style="-fx-background-color: black;" textFill="WHITE">
-               <font>
-                  <Font name="Corbel Bold" size="18.0" />
-               </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </Label>
-            <Button layoutX="450.0" layoutY="145.0" mnemonicParsing="false" onAction="#onButtonAnleitung" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: darkgrey;" text="Das Spiel" textFill="#222222">
-               <font>
-                  <Font name="Corbel Bold" size="16.0" />
-               </font>
-            </Button>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="320.0" prefHeight="55.0" prefWidth="280.0" style="-fx-background-color: darkgrey;" text="&quot;Dont get Caught&quot;" textFill="#4d4d4d">
-               <font>
-                  <Font name="Corbel Bold" size="30.0" />
-               </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </Label>
-            <Button layoutX="450.0" layoutY="186.0" mnemonicParsing="false" onAction="#onButtonLogin" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: darkgrey;" text="Login" textFill="#222222">
-               <font>
-                  <Font name="Corbel Bold" size="16.0" />
-               </font>
-            </Button>
-            <Button layoutX="450.0" layoutY="226.0" mnemonicParsing="false" onAction="#onButtonBeenden" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: darkgrey;" text="Beenden" textFill="#222222">
-               <font>
-                  <Font name="Corbel Bold" size="16.0" />
-               </font>
-            </Button>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: darkgrey;">
+               <children>
+                  <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Grafiken/Dieb_gefasst.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="420.0" layoutY="126.0" opacity="0.6" prefHeight="205.0" prefWidth="160.0" style="-fx-background-color: black;" textFill="WHITE">
+                     <font>
+                        <Font name="Corbel Bold" size="18.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="320.0" prefHeight="55.0" prefWidth="280.0" style="-fx-background-color: darkgrey;" text="&quot;Dont get Caught&quot;" textFill="#464646">
+                     <font>
+                        <Font name="Corbel Bold" size="30.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Button layoutX="440.0" layoutY="144.0" mnemonicParsing="false" onAction="#onButtonBeschreibung" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" text="Das Spiel" textFill="#464646">
+                     <font>
+                        <Font name="Corbel Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="440.0" layoutY="191.0" mnemonicParsing="false" onAction="#onButtonZumLogin" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" text="Login" textFill="#464646">
+                     <font>
+                        <Font name="Corbel Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="440.0" layoutY="237.0" mnemonicParsing="false" onAction="#onButtonZurRegistrierung" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" text="Registrierung" textFill="#464646">
+                     <font>
+                        <Font name="Corbel Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="440.0" layoutY="283.0" mnemonicParsing="false" onAction="#onButtonBeenden" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" text="Beenden" textFill="#464646">
+                     <font>
+                        <Font name="Corbel Bold" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
          </children>
-      </Pane>
-   </children>
-</AnchorPane>
+      </AnchorPane>
+   </center>
+</BorderPane>

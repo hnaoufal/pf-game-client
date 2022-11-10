@@ -6,6 +6,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class HelloApplication extends Application {
 
     //private Stage stage;
@@ -16,14 +18,14 @@ public class HelloApplication extends Application {
     }
 
     @Override
-    public void start(Stage stage)  throws Exception {
+    public void start(Stage stage)  throws IOException {
 
         //this.stage = stage;
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Start.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Start.fxml"));
 
-        Parent root = loader.load();
-        HelloController startWindowController = loader.getController();
+        Parent root = fxmlLoader.load();
+        HelloController startWindowController = fxmlLoader.getController();
         startWindowController.setStage(stage);
 
         Scene scene = new Scene(root);

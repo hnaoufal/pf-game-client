@@ -7,6 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class HelloController {
 
     @FXML
@@ -21,7 +23,7 @@ public class HelloController {
 
     // Zur Beschreibung
     @FXML
-    protected void onButtonBeschreibung(ActionEvent event) throws Exception {
+    protected void onButtonBeschreibung(ActionEvent event) throws IOException {
 
         fxmlLoader = new FXMLLoader(getClass().getResource("Description.fxml"));
         root = fxmlLoader.load();
@@ -31,7 +33,7 @@ public class HelloController {
 
     // Zum Login
     @FXML
-    public void onButtonZumLogin() throws Exception {
+    public void onButtonZumLogin() throws IOException {
 
         fxmlLoader = new FXMLLoader(getClass().getResource("Login.fxml"));
         root = fxmlLoader.load();
@@ -41,7 +43,7 @@ public class HelloController {
 
     // Zur Registrierung
     @FXML
-    public void onButtonZurRegistrierung() throws Exception {
+    public void onButtonZurRegistrierung() throws IOException {
 
         fxmlLoader = new FXMLLoader(getClass().getResource("Registry.fxml"));
         root = fxmlLoader.load();
@@ -51,7 +53,7 @@ public class HelloController {
 
     // Zurück zum Startseite
     @FXML
-    protected void onButtonZurStartseite() throws Exception {
+    protected void onButtonZurStartseite() throws IOException {
 
         fxmlLoader = new FXMLLoader(getClass().getResource("Start.fxml"));
         root = fxmlLoader.load();
@@ -61,7 +63,7 @@ public class HelloController {
 
     // Login und zur Seite "Settings" springen
     @FXML
-    public void onButtonLogin() throws Exception {
+    public void onButtonLogin() throws IOException {
 
         fxmlLoader = new FXMLLoader(getClass().getResource("Settings.fxml"));
         root = fxmlLoader.load();
@@ -71,7 +73,7 @@ public class HelloController {
 
     // Registrierung und zur Seite "Settings" springen
     @FXML
-    public void onButtonRegistrierung() throws Exception {
+    public void onButtonRegistrierung() throws IOException {
 
         fxmlLoader = new FXMLLoader(getClass().getResource("Settings.fxml"));
         root = fxmlLoader.load();
@@ -81,7 +83,7 @@ public class HelloController {
 
     // Spiel beenden
     @FXML
-    public void onButtonBeenden() throws Exception {
+    public void onButtonBeenden() throws IOException {
         System.exit(0);
     }
 }

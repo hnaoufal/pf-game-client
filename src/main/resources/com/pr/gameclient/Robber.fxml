@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: darkgrey;">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Grafiken/Dieb_klaut_Sparschein.jpg" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="15.0" layoutY="14.0" />
+            <Text fill="#545454" layoutX="416.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Robber" textAlignment="CENTER" wrappingWidth="173.263671875">
+               <font>
+                  <Font name="Corbel Bold" size="30.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="45.0" fitWidth="38.0" layoutX="423.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Grafiken/Herz.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="32.0" layoutX="426.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Grafiken/Geldsack.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="423.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Grafiken/Waffe.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="417.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true" rotate="-30.0">
+               <image>
+                  <Image url="@../Grafiken/Brechstange.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="423.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+               <image>
+                  <Image url="@../Grafiken/Schraubenzieher.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="15.0" fitWidth="114.0" layoutX="472.0" layoutY="305.0">
+               <image>
+                  <Image url="@../Grafiken/Progressbar2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="15.0" fitWidth="173.0" layoutX="472.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Grafiken/Slider.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="15.0" fitWidth="173.0" layoutX="471.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Grafiken/Slider.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="15.0" fitWidth="173.0" layoutX="471.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Grafiken/Slider.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="15.0" fitWidth="173.0" layoutX="471.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Grafiken/Slider.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

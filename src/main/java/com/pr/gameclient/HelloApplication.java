@@ -10,8 +10,6 @@ import java.io.IOException;
 
 public class HelloApplication extends Application {
 
-    //private Stage stage;
-
     public static void main(String[] args) {
 
         launch(args);
@@ -19,8 +17,6 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage)  throws IOException {
-
-        //this.stage = stage;
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Start.fxml"));
 

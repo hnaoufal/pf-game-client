@@ -72,7 +72,7 @@
                   <Font name="Corbel Bold" size="14.0" />
                </font>
             </Text>
-            <Button layoutX="241.0" layoutY="246.0" mnemonicParsing="false" onAction="#onButtonLogin" prefHeight="30.0" prefWidth="120.0" text="Login" textFill="#464646">
+            <Button layoutX="241.0" layoutY="246.0" mnemonicParsing="false" onAction="#onButtonLogin" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" text="Login" textFill="#464646">
                <font>
                   <Font name="Corbel Bold" size="14.0" />
                </font>

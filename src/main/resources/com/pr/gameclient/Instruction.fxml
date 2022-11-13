@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pr.gameclient.HelloController">
+   <children>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: darkgrey;">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="600.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Grafiken/Dieb_rennt.jpg" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="15.0" layoutY="14.0" />
+            <Button layoutX="454.0" layoutY="347.0" mnemonicParsing="false" onAction="#onButtonZurueckZumStart" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: grey;" text="Zurück" textFill="WHITE">
+               <font>
+                  <Font name="Corbel Bold" size="14.0" />
+               </font>
+            </Button>
+            <TextField layoutX="454.0" layoutY="22.0" prefHeight="25.0" prefWidth="120.0" text="W = vorwärts" />
+            <TextField layoutX="454.0" layoutY="53.0" prefHeight="25.0" prefWidth="120.0" text="S = rückwärts" />
+            <TextField layoutX="454.0" layoutY="83.0" prefHeight="25.0" prefWidth="120.0" text="A = nach links" />
+            <TextField layoutX="454.0" layoutY="113.0" prefWidth="120.0" text="D = nach rechts" />
+            <ImageView fitHeight="30.0" fitWidth="35.0" layoutX="427.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+               <image>
+                  <Image url="@../Grafiken/Pfeil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="35.0" layoutX="427.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+               <image>
+                  <Image url="@../Grafiken/Pfeil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="35.0" layoutX="427.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Grafiken/Pfeil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="35.0" layoutX="427.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+               <image>
+                  <Image url="@../Grafiken/Pfeil.png" />
+               </image>
+            </ImageView>
+            <TextField layoutX="454.0" layoutY="143.0" prefHeight="25.0" prefWidth="120.0" text="Pause" />
+            <TextField layoutX="454.0" layoutY="173.0" prefHeight="25.0" prefWidth="120.0" text="Exit" />
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="427.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Grafiken/Rechteck.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="427.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Grafiken/Kreuz.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

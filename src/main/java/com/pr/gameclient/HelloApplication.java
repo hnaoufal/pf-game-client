@@ -10,11 +10,6 @@ import java.io.IOException;
 
 public class HelloApplication extends Application {
 
-    public static void main(String[] args) {
-
-        launch(args);
-    }
-
     @Override
     public void start(Stage stage)  throws IOException {
 
@@ -28,5 +23,10 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.setTitle("Dont get Caught");
         stage.show();
+    }
+
+    public static void main(String[] args) {
+
+        launch(args);
     }
 }

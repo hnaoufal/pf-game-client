@@ -1,11 +1,14 @@
 package com.pr.gameclient;
 
+import javafx.animation.PathTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import java.io.IOException;
 
@@ -13,7 +16,7 @@ public class HelloController {
 
     @FXML
     private Stage stage;
-    private Scene sceneSwitcher;
+    private Scene scene;
     private Parent root;
 
     public void setStage(Stage stage) {
@@ -23,45 +26,34 @@ public class HelloController {
 
     // Zur Beschreibung
     @FXML
-    protected void onButtonBeschreibung(ActionEvent event) throws IOException {
+    protected void onButtonAnleitung(ActionEvent event) throws IOException {
 
-        root = FXMLLoader.load(getClass().getResource("Description.fxml"));
-        sceneSwitcher = new Scene(root);
+        root = FXMLLoader.load(getClass().getResource("Instruction.fxml"));
+        scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(sceneSwitcher);
+        stage.setScene(scene);
         stage.show();
     }
 
-    // Zum Login
+    // Zur Seite "Login"
     @FXML
     public void onButtonZumLogin(ActionEvent event) throws IOException {
 
         root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-        sceneSwitcher = new Scene(root);
+        scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(sceneSwitcher);
+        stage.setScene(scene);
         stage.show();
     }
 
-    // Zur Registrierung
+    // Zur Seite "Registrierung"
     @FXML
     public void onButtonZurRegistrierung(ActionEvent event) throws IOException {
 
         root = FXMLLoader.load(getClass().getResource("Registry.fxml"));
-        sceneSwitcher = new Scene(root);
+        scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(sceneSwitcher);
-        stage.show();
-    }
-
-    // Zurück zur Startseite
-    @FXML
-    protected void onButtonZurStartseite(ActionEvent event) throws IOException {
-
-        root = FXMLLoader.load(getClass().getResource("Start.fxml"));
-        sceneSwitcher = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(sceneSwitcher);
+        stage.setScene(scene);
         stage.show();
     }
 
@@ -70,9 +62,9 @@ public class HelloController {
     public void onButtonLogin(ActionEvent event) throws IOException {
 
         root = FXMLLoader.load(getClass().getResource("Settings.fxml"));
-        sceneSwitcher = new Scene(root);
+        scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(sceneSwitcher);
+        stage.setScene(scene);
         stage.show();
     }
 
@@ -81,9 +73,9 @@ public class HelloController {
     public void onButtonRegistrierung(ActionEvent event) throws IOException {
 
         root = FXMLLoader.load(getClass().getResource("Settings.fxml"));
-        sceneSwitcher = new Scene(root);
+        scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(sceneSwitcher);
+        stage.setScene(scene);
         stage.show();
     }
 
@@ -92,9 +84,9 @@ public class HelloController {
     public void onButtonOfficer(ActionEvent event) throws IOException {
 
         root = FXMLLoader.load(getClass().getResource("Officer.fxml"));
-        sceneSwitcher = new Scene(root);
+        scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(sceneSwitcher);
+        stage.setScene(scene);
         stage.show();
     }
 
@@ -103,15 +95,49 @@ public class HelloController {
     public void onButtonRobber(ActionEvent event) throws IOException {
 
         root = FXMLLoader.load(getClass().getResource("Robber.fxml"));
-        sceneSwitcher = new Scene(root);
+        scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(sceneSwitcher);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    // Button "Game" um Spiel zu starten
+    @FXML
+    public void onButtonGame(ActionEvent event) throws IOException {
+
+        root = FXMLLoader.load(getClass().getResource("Game.fxml"));
+        scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    // Button "Zurück" zu den Start
+    @FXML
+    public void onButtonZurueckZumStart(ActionEvent event) throws IOException {
+
+        root = FXMLLoader.load(getClass().getResource("Start.fxml"));
+        scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    // Button "Zurück" zu den Settings
+    @FXML
+    public void onButtonZurueckZuSettings(ActionEvent event) throws IOException {
+
+        root = FXMLLoader.load(getClass().getResource("Settings.fxml"));
+        scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
         stage.show();
     }
 
     // Spiel beenden
     @FXML
-    public void onButtonBeenden() {
+    public void onButtonEnde() {
+
         System.exit(0);
     }
 }

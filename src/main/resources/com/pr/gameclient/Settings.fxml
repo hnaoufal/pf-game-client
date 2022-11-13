@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pr.gameclient.HelloController">
+<AnchorPane style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pr.gameclient.HelloController">
    <children>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: darkgrey;">
          <children>
@@ -76,7 +76,7 @@
                   <Insets />
                </opaqueInsets>
             </Label>
-            <Button layoutX="58.0" layoutY="278.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: grey;" text="Resume" textFill="WHITE">
+            <Button layoutX="58.0" layoutY="278.0" mnemonicParsing="false" onAction="#onButtonStart" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: grey;" text="Resume" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="14.0" />
                </font>

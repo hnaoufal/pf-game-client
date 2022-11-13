@@ -114,4 +114,13 @@ public class HelloController {
     public void onButtonBeenden() {
         System.exit(0);
     }
+
+    @FXML
+    public void onButtonStart(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("RobberGame.fxml"));
+        sceneSwitcher = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(sceneSwitcher);
+        stage.show();
+    }
 }

@@ -19,7 +19,7 @@
                   <Image url="@../Grafiken/Polizeiauto.jpg" />
                </image>
             </ImageView>
-            <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="310.0" layoutY="133.0" opacity="0.7" prefHeight="235.0" prefWidth="120.0" style="-fx-background-color: grey;" textFill="WHITE">
+            <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="310.0" layoutY="133.0" opacity="0.8" prefHeight="235.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="18.0" />
                </font>
@@ -27,7 +27,7 @@
                   <Insets />
                </opaqueInsets>
             </Label>
-            <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="443.0" layoutY="133.0" opacity="0.7" prefHeight="235.0" prefWidth="120.0" style="-fx-background-color: grey;" textFill="WHITE">
+            <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="443.0" layoutY="133.0" opacity="0.8" prefHeight="235.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="18.0" />
                </font>
@@ -35,7 +35,7 @@
                   <Insets />
                </opaqueInsets>
             </Label>
-            <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="175.0" layoutY="133.0" opacity="0.7" prefHeight="235.0" prefWidth="120.0" style="-fx-background-color: grey;" textFill="WHITE">
+            <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="175.0" layoutY="133.0" opacity="0.8" prefHeight="235.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="18.0" />
                </font>
@@ -43,7 +43,7 @@
                   <Insets />
                </opaqueInsets>
             </Label>
-            <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="133.0" opacity="0.7" prefHeight="235.0" prefWidth="120.0" style="-fx-background-color: grey;" textFill="WHITE">
+            <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="133.0" opacity="0.8" prefHeight="235.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="18.0" />
                </font>
@@ -52,17 +52,17 @@
                </opaqueInsets>
             </Label>
             <AnchorPane layoutX="15.0" layoutY="14.0" />
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="133.0" prefHeight="40.0" prefWidth="120.0" text="Spiel" textFill="WHITE">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="133.0" prefHeight="40.0" prefWidth="120.0" text="Game" textFill="WHITE">
                <font>
-                  <Font name="Corbel Bold" size="22.0" />
+                  <Font name="Corbel Bold" size="18.0" />
                </font>
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="443.0" layoutY="133.0" prefHeight="40.0" prefWidth="120.0" text="Score" textFill="WHITE">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="443.0" layoutY="133.0" prefHeight="40.0" prefWidth="120.0" text="Shop" textFill="WHITE">
                <font>
-                  <Font name="Corbel Bold" size="22.0" />
+                  <Font name="Corbel Bold" size="18.0" />
                </font>
                <opaqueInsets>
                   <Insets />
@@ -76,7 +76,7 @@
                   <Insets />
                </opaqueInsets>
             </Label>
-            <Button layoutX="58.0" layoutY="278.0" mnemonicParsing="false" opacity="0.4" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: blAck;" text="Resume" textFill="WHITE">
+            <Button layoutX="58.0" layoutY="278.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: grey;" text="Resume" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="14.0" />
                </font>
@@ -91,30 +91,60 @@
                   <Font name="Corbel Bold" size="36.0" />
                </font>
             </Text>
-            <Button layoutX="58.0" layoutY="234.0" mnemonicParsing="false" opacity="0.4" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: blAck;" text="Restart" textFill="WHITE">
+            <Button layoutX="58.0" layoutY="234.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: grey;" text="Restart" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="58.0" layoutY="322.0" mnemonicParsing="false" onAction="#onButtonZurueckZumStart" opacity="0.4" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: blAck;" text="Exit" textFill="WHITE">
+            <Button layoutX="58.0" layoutY="322.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: grey;" text="Exit" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="14.0" />
                </font>
             </Button>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="215.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Grafiken/Münze.png" />
+               </image>
+            </ImageView>
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="175.0" layoutY="133.0" prefHeight="40.0" prefWidth="120.0" text="Level" textFill="WHITE">
                <font>
-                  <Font name="Corbel Bold" size="22.0" />
+                  <Font name="Corbel Bold" size="18.0" />
                </font>
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </Label>
-            <ImageView fitHeight="170.0" fitWidth="200.0" layoutY="118.0" scaleX="0.4" scaleY="0.4">
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="195.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Grafiken/Münze.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="234.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Grafiken/Münze.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="215.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Grafiken/Münze.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="254.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Grafiken/Münze.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="176.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Grafiken/Münze.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="1.0" layoutY="100.0" scaleX="0.4" scaleY="0.4">
                <image>
                   <Image url="@../Grafiken/Start.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="270.0" layoutY="111.0" scaleX="0.3" scaleY="0.3">
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="270.0" layoutY="106.0" scaleX="0.3" scaleY="0.3">
                <image>
                   <Image url="@../Grafiken/Polizeimütze.png" />
                </image>
@@ -124,37 +154,21 @@
                   <Image url="@../Grafiken/Räuber.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="310.0" layoutY="133.0" prefHeight="40.0" prefWidth="120.0" text="Spieler" textFill="WHITE">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="310.0" layoutY="133.0" prefHeight="40.0" prefWidth="120.0" text="Player" textFill="WHITE">
                <font>
-                  <Font name="Corbel Bold" size="22.0" />
+                  <Font name="Corbel Bold" size="18.0" />
                </font>
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </Label>
-            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="403.0" layoutY="127.0" scaleX="0.4" scaleY="0.4">
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="403.0" layoutY="134.0" scaleX="0.5" scaleY="0.5">
                <image>
-                  <Image url="@../Grafiken/Score1.png" />
+                  <Image url="@../Grafiken/Spiel.png" />
                </image>
             </ImageView>
-            <Button layoutX="335.0" layoutY="187.0" mnemonicParsing="false" onAction="#onButtonOfficer" opacity="0.0" prefHeight="55.0" prefWidth="70.0" />
+            <Button layoutX="335.0" layoutY="177.0" mnemonicParsing="false" onAction="#onButtonOfficer" opacity="0.0" prefHeight="55.0" prefWidth="70.0" />
             <Button layoutX="335.0" layoutY="259.0" mnemonicParsing="false" onAction="#onButtonRobber" opacity="0.0" prefHeight="55.0" prefWidth="70.0" />
-            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="135.0" layoutY="107.0" scaleX="0.2" scaleY="0.2">
-               <image>
-                  <Image url="@../Grafiken/Star_empty.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="135.0" layoutY="158.0" scaleX="0.2" scaleY="0.2">
-               <image>
-                  <Image url="@../Grafiken/Star_half.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="135.0" layoutY="208.0" scaleX="0.2" scaleY="0.2">
-               <image>
-                  <Image url="@../Grafiken/Star_full.png" />
-               </image>
-            </ImageView>
-            <Button layoutX="58.0" layoutY="185.0" mnemonicParsing="false" onAction="#onButtonGame" opacity="0.0" prefHeight="36.0" prefWidth="85.0" />
          </children>
       </Pane>
    </children>

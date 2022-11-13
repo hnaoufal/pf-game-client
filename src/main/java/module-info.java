@@ -8,4 +8,5 @@ module com.pr.gameclient {
 
     opens com.pr.gameclient to javafx.fxml;
     exports com.pr.gameclient;
+    exports com.pr.gameclient.controller;
 }

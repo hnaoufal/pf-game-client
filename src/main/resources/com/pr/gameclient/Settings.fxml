@@ -76,7 +76,7 @@
                   <Insets />
                </opaqueInsets>
             </Label>
-            <Button layoutX="58.0" layoutY="278.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: grey;" text="Resume" textFill="WHITE">
+            <Button layoutX="58.0" layoutY="278.0" mnemonicParsing="false" onAction="#onButtonStart" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: grey;" text="Resume" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="14.0" />
                </font>
@@ -96,16 +96,11 @@
                   <Font name="Corbel Bold" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="58.0" layoutY="322.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: grey;" text="Exit" textFill="WHITE">
+            <Button layoutX="58.0" layoutY="322.0" mnemonicParsing="false" onAction="#onButtonZurueckZumStart" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: grey;" text="Zurück" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="14.0" />
                </font>
             </Button>
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="215.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Grafiken/Münze.png" />
-               </image>
-            </ImageView>
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="175.0" layoutY="133.0" prefHeight="40.0" prefWidth="120.0" text="Level" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="18.0" />
@@ -114,32 +109,17 @@
                   <Insets />
                </opaqueInsets>
             </Label>
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="195.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="215.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Grafiken/Münze.png" />
+                  <Image url="@../Grafiken/Star_empty.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="234.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="215.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Grafiken/Münze.png" />
+                  <Image url="@../Grafiken/Star_half.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="215.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Grafiken/Münze.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="254.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Grafiken/Münze.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="176.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Grafiken/Münze.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="1.0" layoutY="100.0" scaleX="0.4" scaleY="0.4">
+            <ImageView fitHeight="195.0" fitWidth="211.0" layoutX="-5.0" layoutY="103.0" scaleX="0.4" scaleY="0.4">
                <image>
                   <Image url="@../Grafiken/Start.png" />
                </image>
@@ -162,14 +142,25 @@
                   <Insets />
                </opaqueInsets>
             </Label>
-            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="403.0" layoutY="134.0" scaleX="0.5" scaleY="0.5">
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="403.0" layoutY="120.0" scaleX="0.4" scaleY="0.4">
                <image>
-                  <Image url="@../Grafiken/Spiel.png" />
+                  <Image url="@../Grafiken/Score1.png" />
                </image>
             </ImageView>
             <Button layoutX="335.0" layoutY="177.0" mnemonicParsing="false" onAction="#onButtonOfficer" opacity="0.0" prefHeight="55.0" prefWidth="70.0" />
             <Button layoutX="335.0" layoutY="259.0" mnemonicParsing="false" onAction="#onButtonRobber" opacity="0.0" prefHeight="55.0" prefWidth="70.0" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="215.0" layoutY="294.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Grafiken/Star_full.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="58.0" layoutY="177.0" mnemonicParsing="false" onAction="#onButtonStart" opacity="0.0" prefHeight="46.0" prefWidth="85.0" text="Button" />
          </children>
       </Pane>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="10.0" layoutY="10.0" scaleX="0.4" scaleY="0.0">
+         <image>
+            <Image url="@../Grafiken/Start.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

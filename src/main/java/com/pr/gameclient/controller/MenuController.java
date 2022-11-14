@@ -1,4 +1,4 @@
-package com.pr.gameclient;
+package com.pr.gameclient.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 
-public class HelloController {
+public class MenuController {
 
     @FXML
     private Stage stage;
@@ -113,7 +113,7 @@ public class HelloController {
     @FXML
     public void onButtonZurueckZumStart(ActionEvent event) throws IOException {
 
-        root = FXMLLoader.load(getClass().getResource("Start.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/com/pr/gameclient/Start.fxml"));
         sceneSwitcher = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(sceneSwitcher);

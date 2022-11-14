@@ -8,13 +8,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pr.gameclient.HelloController">
+<AnchorPane style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pr.gameclient.controller.MenuController">
    <children>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: darkgrey;">
          <children>
             <ImageView fitHeight="400.0" fitWidth="600.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Grafiken/Dieb_rennt.jpg" />
+                  <Image url="@../../Grafiken/Dieb_rennt.jpg" />
                </image>
             </ImageView>
             <AnchorPane layoutX="15.0" layoutY="14.0" />
@@ -29,34 +29,34 @@
             <TextField layoutX="454.0" layoutY="113.0" prefWidth="120.0" text="D = nach rechts" />
             <ImageView fitHeight="30.0" fitWidth="35.0" layoutX="427.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                <image>
-                  <Image url="@../Grafiken/Pfeil.png" />
+                  <Image url="@../../Grafiken/Pfeil.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="30.0" fitWidth="35.0" layoutX="427.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
                <image>
-                  <Image url="@../Grafiken/Pfeil.png" />
+                  <Image url="@../../Grafiken/Pfeil.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="30.0" fitWidth="35.0" layoutX="427.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Grafiken/Pfeil.png" />
+                  <Image url="@../../Grafiken/Pfeil.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="30.0" fitWidth="35.0" layoutX="427.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
                <image>
-                  <Image url="@../Grafiken/Pfeil.png" />
+                  <Image url="@../../Grafiken/Pfeil.png" />
                </image>
             </ImageView>
             <TextField layoutX="454.0" layoutY="143.0" prefHeight="25.0" prefWidth="120.0" text="Pause" />
             <TextField layoutX="454.0" layoutY="173.0" prefHeight="25.0" prefWidth="120.0" text="Exit" />
             <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="427.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Grafiken/Rechteck.png" />
+                  <Image url="@../../Grafiken/Rechteck.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="427.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Grafiken/Kreuz.png" />
+                  <Image url="@../../Grafiken/Kreuz.png" />
                </image>
             </ImageView>
          </children>

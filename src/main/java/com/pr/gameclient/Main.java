@@ -1,5 +1,6 @@
 package com.pr.gameclient;
 
+import com.pr.gameclient.controller.MenuController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class Main extends Application {
 
     @Override
     public void start(Stage stage)  throws IOException {
@@ -16,7 +17,7 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Start.fxml"));
 
         Parent root = fxmlLoader.load();
-        HelloController startWindowController = fxmlLoader.getController();
+        MenuController startWindowController = fxmlLoader.getController();
         startWindowController.setStage(stage);
 
         Scene scene = new Scene(root);

@@ -59,8 +59,6 @@ public class RobberGameController {
         st.setToY(1);
         st.play();
 
-
-
         int count = 0; // Zählt bei der wievielten Karte auf der Hand (von links gezählt) wir im Loop sind.
 
         // Alle Karten werden wieder auf ihre Ursprungsposition bewegt

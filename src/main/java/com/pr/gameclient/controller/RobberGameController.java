@@ -17,33 +17,31 @@ public class RobberGameController {
     @FXML
     public void zoomCard(MouseEvent event) {
 
-        //Die gehoverte Karte wird größer gemacht und herausgestellt
+        //Die gehoverte Karte wird größer gemacht
         ImageView hoveredCard = (ImageView) event.getTarget();
-
         ScaleTransition st = new ScaleTransition(Duration.millis(500), hoveredCard);
         st.setToX(1.5);
         st.setToY(1.5);
         st.play();
 
+        int count = 0; // Zählt bei der wievielten Karte auf der Hand (von links gezählt) wir im Loop sind.
 
-//        hoveredCard.getTransforms().add(new Translate(-110,-170,0));
-//        hoveredCard.getTransforms().add(new Scale(1.5,1.5));
+        //Loop über alle Karten auf der Hand
+        for (Node n : hoveredCard.getParent().getChildrenUnmodifiable()) {
 
-        int count = 0;
-        //Alle Karten links von der gehoverten werden weiter nach links gerückt, damit sie sichtbar bleiben
-        for (Node n : hoveredCard.getParent().getChildrenUnmodifiable()) { // Für alle Anderen Kinder der hbox in der die Karten sind
+            TranslateTransition tt = new TranslateTransition(Duration.millis(500), n);
+
+            //Wenn wir die gehoverte Karte erreichen, wird sie nach obenlinks herausgestellt und der Loop endet
             if (n == hoveredCard) {
-                TranslateTransition tt = new TranslateTransition(Duration.millis(500), hoveredCard);
-                tt.setToX(count*(-50) - 75);
                 tt.setToY(-140);
+                tt.setToX(count*(-50) - 75);
                 tt.play();
-
-                break; // Wenn wir die gehoverte Karte erreichen, hören wir auf
+                break;
             }
-//            n.getTransforms().add(new Translate(-110,0,0));
-            TranslateTransition leftCards = new TranslateTransition(Duration.millis(500), n);
-            leftCards.setToX(count*(-50) - 75);
-            leftCards.play();
+
+//          //Alle Karten links von der gehoverten werden weiter nach links gerückt, damit sie sichtbar bleiben
+            tt.setToX(count*(-50) - 75);
+            tt.play();
             count++;
         }
 
@@ -55,6 +53,7 @@ public class RobberGameController {
 
         ImageView hoveredCard = (ImageView) event.getTarget();
 
+        // Die gehoverte Karte wird wieder auf ihren normalen Scale geschrumpft
         ScaleTransition st = new ScaleTransition(Duration.millis(500), hoveredCard);
         st.setToX(1);
         st.setToY(1);
@@ -62,14 +61,14 @@ public class RobberGameController {
 
 
 
-        int count = 0;
-        //Alle Transforms von allen Karten entfernen
+        int count = 0; // Zählt bei der wievielten Karte auf der Hand (von links gezählt) wir im Loop sind.
+
+        // Alle Karten werden wieder auf ihre Ursprungsposition bewegt
         for (Node n : hoveredCard.getParent().getChildrenUnmodifiable()) {
-            n.getTransforms().clear();
 
             TranslateTransition tt = new TranslateTransition(Duration.millis(500), n);
-            tt.setToX(count*(-50));
-            tt.setToY(0);
+            tt.setToX(count*(-50)); // Das -50 ist, damit sich die Karten leicht überlappen
+            tt.setToY(0); // Das holt die gehoverte Karte wieder runter zu den anderen
             tt.play();
 
             count++;

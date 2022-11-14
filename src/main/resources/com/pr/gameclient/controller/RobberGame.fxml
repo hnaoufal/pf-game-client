@@ -63,6 +63,11 @@
                   <Image url="@../../Grafiken/Cards/PlaceholderCard.png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="200.0" fitWidth="144.0" onMouseEntered="#zoomCard" onMouseExited="#unZoomCard" translateX="-150.0">
+               <image>
+                  <Image url="@../../Grafiken/Cards/PlaceholderCard.png" />
+               </image>
+            </ImageView>
          </children>
       </HBox>
    </children>

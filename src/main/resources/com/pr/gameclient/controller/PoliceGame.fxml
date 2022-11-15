@@ -21,7 +21,7 @@
          <children>
             <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Grafiken/Polizist_2.jpg" />
+                  <Image url="@../../Grafiken/Polizist_1.jpg" />
                </image>
             </ImageView>
             <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
@@ -31,17 +31,17 @@
             </ImageView>
             <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Grafiken/Polizist_5.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
-               <image>
                   <Image url="@../../Grafiken/Polizist_mit_Schutzschild.jpg" />
                </image>
             </ImageView>
             <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Grafiken/Polizist_1.jpg" />
+                  <Image url="@../../Grafiken/Polizist_2.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Grafiken/Polizist_5.jpg" />
                </image>
             </ImageView>
          </children>

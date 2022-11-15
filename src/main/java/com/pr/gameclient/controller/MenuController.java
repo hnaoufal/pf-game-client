@@ -140,7 +140,7 @@ public class MenuController {
 
     @FXML
     public void onButtonStart(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("RobberGame.fxml"));
+        root = FXMLLoader.load(getClass().getResource("PoliceGame.fxml"));
         sceneSwitcher = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(sceneSwitcher);

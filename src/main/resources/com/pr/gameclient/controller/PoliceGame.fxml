@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pr.gameclient.controller.RobberGameController">
+   <children>
+      <ScrollPane hbarPolicy="NEVER" layoutX="-15.0" layoutY="-4.0" pannable="true" prefHeight="795.0" prefWidth="1059.0" vbarPolicy="NEVER" AnchorPane.bottomAnchor="-23.0" AnchorPane.leftAnchor="-15.0" AnchorPane.rightAnchor="-20.0" AnchorPane.topAnchor="-4.0">
+         <content>
+            <ImageView fitHeight="2000.0" fitWidth="1500.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Grafiken/Background.png" />
+               </image>
+            </ImageView>
+         </content>
+      </ScrollPane>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="225.0">
+         <children>
+            <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Grafiken/Polizist_2.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Grafiken/Polizist_mit_Waffe.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Grafiken/Polizist_5.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Grafiken/Polizist_mit_Schutzschild.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Grafiken/Polizist_1.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="225.0" layoutY="610.0" prefHeight="200.0" prefWidth="835.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="610.0">
+         <children>
+            <ImageView fitHeight="120.0" fitWidth="120.0" onMouseEntered="#zoomCard" onMouseExited="#unZoomCard">
+               <image>
+                  <Image url="@../../Grafiken/Aktionskarte_Verteidigen.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="120.0" fitWidth="120.0" onMouseEntered="#zoomCard" onMouseExited="#unZoomCard" translateX="-20.0">
+               <image>
+                  <Image url="@../../Grafiken/Aktionskarte_Aufrüsten.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="120.0" fitWidth="120.0" onMouseEntered="#zoomCard" onMouseExited="#unZoomCard" translateX="-40.0">
+               <image>
+                  <Image url="@../../Grafiken/Aktionskarte_Verstärkung.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="120.0" fitWidth="120.0" onMouseEntered="#zoomCard" onMouseExited="#unZoomCard" translateX="-60.0">
+               <image>
+                  <Image url="@../../Grafiken/Aktionskarte_Schießen.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="120.0" fitWidth="120.0" onMouseEntered="#zoomCard" onMouseExited="#unZoomCard" translateX="-80.0">
+               <image>
+                  <Image url="@../../Grafiken/Aktionskarte_Festnehmen.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

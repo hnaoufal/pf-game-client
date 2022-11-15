@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pr.gameclient.controller.RobberGameController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pr.gameclient.controller.GameController">
    <children>
       <ScrollPane hbarPolicy="NEVER" layoutX="-15.0" layoutY="-4.0" pannable="true" prefHeight="795.0" prefWidth="1059.0" vbarPolicy="NEVER" AnchorPane.bottomAnchor="-23.0" AnchorPane.leftAnchor="-15.0" AnchorPane.rightAnchor="-20.0" AnchorPane.topAnchor="-4.0">
          <content>

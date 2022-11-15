@@ -5,12 +5,10 @@ import javafx.animation.TranslateTransition;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.fxml.FXML;
-import javafx.scene.transform.Scale;
-import javafx.scene.transform.Translate;
 import javafx.scene.Node;
 import javafx.util.Duration;
 
-public class RobberGameController {
+public class GameController {
 
     // Rückt die Karte, über der die Maus hovered nach oben und vergrößert sie. vorhergehende Karten rücken nach links
     // damit sie weiterhin sichtbar sind

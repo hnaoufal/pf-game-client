@@ -80,7 +80,7 @@ public class MenuController {
     @FXML
     public void onButtonOfficer(ActionEvent event) throws IOException {
 
-        root = FXMLLoader.load(getClass().getResource("Officer.fxml"));
+        root = FXMLLoader.load(getClass().getResource("Policeman.fxml"));
         sceneSwitcher = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(sceneSwitcher);
@@ -102,7 +102,7 @@ public class MenuController {
     @FXML
     public void onButtonGame(ActionEvent event) throws IOException {
 
-        root = FXMLLoader.load(getClass().getResource("Game.fxml"));
+        root = FXMLLoader.load(getClass().getResource("Game_Alt.fxml"));
         sceneSwitcher = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(sceneSwitcher);
@@ -142,6 +142,8 @@ public class MenuController {
     public void onButtonStart(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("PoliceGame.fxml"));
         sceneSwitcher = new Scene(root);
+        sceneSwitcher.getRoot().requestFocus();
+
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(sceneSwitcher);
         stage.show();

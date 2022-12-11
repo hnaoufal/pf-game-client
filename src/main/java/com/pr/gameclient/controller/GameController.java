@@ -2,13 +2,31 @@ package com.pr.gameclient.controller;
 
 import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
+import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
-public class GameController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class GameController implements Initializable {
+
+    @FXML
+    private AnchorPane scene;
+    @FXML
+    private ImageView policeman;
+
+    private final MoveController moveController = new MoveController();
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        moveController.move(scene, policeman);
+    }
 
     // Rückt die Karte, über der die Maus hovered nach oben und vergrößert sie. vorhergehende Karten rücken nach links
     // damit sie weiterhin sichtbar sind
@@ -37,7 +55,7 @@ public class GameController {
                 break;
             }
 
-//          //Alle Karten links von der gehoverten werden weiter nach links gerückt, damit sie sichtbar bleiben
+            //Alle Karten links von der gehoverten werden weiter nach links gerückt, damit sie sichtbar bleiben
             tt.setToX(count*(-50) - 75);
             tt.play();
             count++;
@@ -70,5 +88,4 @@ public class GameController {
             count++;
         }
     }
-
 }

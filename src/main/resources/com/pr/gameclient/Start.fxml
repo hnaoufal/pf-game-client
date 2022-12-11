@@ -18,7 +18,7 @@
                <children>
                   <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Grafiken/Dieb_gefasst.jpg" />
+                        <Image url="@../Grafiken/RobberPics/Dieb_gefasst.jpg" />
                      </image>
                   </ImageView>
                   <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="420.0" layoutY="126.0" opacity="0.6" prefHeight="205.0" prefWidth="160.0" style="-fx-background-color: black;" textFill="WHITE">

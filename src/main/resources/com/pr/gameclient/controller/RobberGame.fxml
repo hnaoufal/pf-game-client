@@ -12,7 +12,7 @@
          <content>
             <ImageView fitHeight="2000.0" fitWidth="1500.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Grafiken/Background.png" />
+                  <Image url="@../../Grafiken/Equipment/Background.png" />
                </image>
             </ImageView>
          </content>

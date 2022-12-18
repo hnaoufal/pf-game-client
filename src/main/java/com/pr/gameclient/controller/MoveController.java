@@ -16,7 +16,7 @@ public class MoveController {
     private BooleanProperty s = new SimpleBooleanProperty();
     private BooleanProperty d = new SimpleBooleanProperty();
     private BooleanBinding keyPressed = w.or(a).or(s).or(d);
-    private int moveVariable = 2;
+    private int speed = 10;
 
     @FXML
     private AnchorPane scene;
@@ -27,7 +27,7 @@ public class MoveController {
         this.scene = scene;
         this.sprite = sprite;
 
-        handle();
+        setup();
 
         keyPressed.addListener(((observableValue, aBoolean, t1) -> {
             if(!aBoolean){
@@ -39,25 +39,24 @@ public class MoveController {
     }
 
     AnimationTimer timer = new AnimationTimer() {
-        @Override
         public void handle(long timestamp) {
             if(w.get()) {
-                sprite.setLayoutY(sprite.getLayoutY() - moveVariable);
+                sprite.setLayoutY(sprite.getLayoutY() - speed);
             }
             if(s.get()){
-                sprite.setLayoutY(sprite.getLayoutY() + moveVariable);
+                sprite.setLayoutY(sprite.getLayoutY() + speed);
             }
             if(a.get()){
-                sprite.setLayoutX(sprite.getLayoutX() - moveVariable);
+                sprite.setLayoutX(sprite.getLayoutX() - speed);
             }
             if(d.get()){
-                sprite.setLayoutX(sprite.getLayoutX() + moveVariable);
+                sprite.setLayoutX(sprite.getLayoutX() + speed);
             }
         }
     };
 
     // Bewegungseinstellungen
-    private void handle(){
+    private void setup(){
         scene.setOnKeyPressed(e -> {
             if(e.getCode() == KeyCode.W) {w.set(true);}
             if(e.getCode() == KeyCode.A) {a.set(true);}
@@ -65,7 +64,7 @@ public class MoveController {
             if(e.getCode() == KeyCode.D) {d.set(true);}
         });
 
-        scene.setOnKeyReleased(e ->{
+        scene.setOnKeyReleased(e -> {
             if(e.getCode() == KeyCode.W) {w.set(false);}
             if(e.getCode() == KeyCode.A) {a.set(false);}
             if(e.getCode() == KeyCode.S) {s.set(false);}

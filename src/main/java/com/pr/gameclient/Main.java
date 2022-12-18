@@ -15,7 +15,6 @@ public class Main extends Application {
     public void start(Stage stage)  throws IOException {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Start.fxml"));
-
         Parent root = fxmlLoader.load();
         MenuController startWindowController = fxmlLoader.getController();
         startWindowController.setStage(stage);

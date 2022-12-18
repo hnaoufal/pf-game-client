@@ -1,13 +1,16 @@
 package com.pr.gameclient.controller;
 
+import javafx.animation.AnimationTimer;
 import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
 import java.net.URL;
@@ -19,13 +22,32 @@ public class GameController implements Initializable {
     private AnchorPane scene;
     @FXML
     private ImageView policeman;
-
+    @FXML
+    private Rectangle shapeDanger;
     private final MoveController moveController = new MoveController();
+
+    @FXML
+    void start(ActionEvent event){
+        policeman.setLayoutY(300);
+        policeman.setLayoutX(300);
+    }
+
+    AnimationTimer collisionTimer = new AnimationTimer() {
+        public void handle(long timestamp) {
+            checkCollision(policeman, shapeDanger);
+        }
+    };
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         moveController.move(scene, policeman);
+        collisionTimer.start();
+    }
+
+    public void checkCollision (ImageView policeman, Rectangle collisionShape){
+        if (policeman.getBoundsInParent().intersects(collisionShape.getBoundsInParent())){
+            System.out.println("Kollision");
+        }
     }
 
     // Rückt die Karte, über der die Maus hovered nach oben und vergrößert sie. vorhergehende Karten rücken nach links

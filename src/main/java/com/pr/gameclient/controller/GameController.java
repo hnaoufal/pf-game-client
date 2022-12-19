@@ -14,27 +14,29 @@ import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class GameController implements Initializable {
 
+    //Kollisionserkenner
     @FXML
     private AnchorPane scene;
     @FXML
     private ImageView policeman;
     @FXML
-    private Rectangle shapeDanger;
+    private ImageView robber1;
+    @FXML
+    private ImageView robber2;
+    @FXML
+    private ImageView robber3;
+
     private final MoveController moveController = new MoveController();
 
-    @FXML
-    void start(ActionEvent event){
-        policeman.setLayoutY(300);
-        policeman.setLayoutX(300);
-    }
-
+    //Kollisionsprüfung wird zusammen mit einem AnimationTimer verwendet, der jeden Frame überprüft, ob es eine Kollision gegeben hat.
     AnimationTimer collisionTimer = new AnimationTimer() {
         public void handle(long timestamp) {
-            checkCollision(policeman, shapeDanger);
+            collision(policeman, robber1, robber2, robber3);
         }
     };
 
@@ -44,9 +46,14 @@ public class GameController implements Initializable {
         collisionTimer.start();
     }
 
-    public void checkCollision (ImageView policeman, Rectangle collisionShape){
-        if (policeman.getBoundsInParent().intersects(collisionShape.getBoundsInParent())){
-            System.out.println("Kollision");
+    //Kollisionserkennung mithilfe der integrierten JavaFX-Funktion .intersects
+    public void collision(ImageView policeman, ImageView collisionRobber1, ImageView collisionRobber2, ImageView collisionRobber3){
+        if (policeman.getBoundsInParent().intersects(collisionRobber1.getBoundsInParent())){
+            System.out.println("Kollision mit Raeuber 1");
+        } else if (policeman.getBoundsInParent().intersects(collisionRobber2.getBoundsInParent())){
+            System.out.println("Kollision mit Raeuber 2");
+        } else if (policeman.getBoundsInParent().intersects(collisionRobber3.getBoundsInParent())){
+            System.out.println("Kollision mit Raeuber 3");
         }
     }
 

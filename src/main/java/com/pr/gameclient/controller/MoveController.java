@@ -16,29 +16,14 @@ public class MoveController {
     private BooleanProperty s = new SimpleBooleanProperty();
     private BooleanProperty d = new SimpleBooleanProperty();
     private BooleanBinding keyPressed = w.or(a).or(s).or(d);
-    private int speed = 10;
+    private int speed = 5;
 
     @FXML
     private AnchorPane scene;
     @FXML
     private ImageView sprite;
 
-    public void move(AnchorPane scene, ImageView sprite){
-        this.scene = scene;
-        this.sprite = sprite;
-
-        setup();
-
-        keyPressed.addListener(((observableValue, aBoolean, t1) -> {
-            if(!aBoolean){
-                timer.start();
-            } else {
-                timer.stop();
-            }
-        }));
-    }
-
-    AnimationTimer timer = new AnimationTimer() {
+    AnimationTimer animationTimer = new AnimationTimer() {
         public void handle(long timestamp) {
             if(w.get()) {
                 sprite.setLayoutY(sprite.getLayoutY() - speed);
@@ -54,6 +39,21 @@ public class MoveController {
             }
         }
     };
+
+    public void move(AnchorPane scene, ImageView sprite){
+        this.scene = scene;
+        this.sprite = sprite;
+
+        setup();
+
+        keyPressed.addListener(((observableValue, aBoolean, t1) -> {
+            if(!aBoolean){
+                animationTimer.start();
+            } else {
+                animationTimer.stop();
+            }
+        }));
+    }
 
     // Bewegungseinstellungen
     private void setup(){

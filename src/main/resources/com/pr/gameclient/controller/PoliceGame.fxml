@@ -1,33 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="scene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: darkgrey;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pr.gameclient.controller.GameController">
+
+<AnchorPane fx:id="scene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="990.0" style="-fx-background-color: darkgrey;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pr.gameclient.controller.GameController">
    <children>
-      <ScrollPane hbarPolicy="NEVER" layoutX="110.0" layoutY="110.0" pannable="true" prefHeight="400.0" prefWidth="675.0" vbarPolicy="NEVER" AnchorPane.bottomAnchor="100.0" AnchorPane.topAnchor="100.0">
-         <content>
-            <ImageView fitHeight="2000.0" fitWidth="790.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+      <BorderPane>
+         <center>
+            <ImageView fitHeight="2000.0" fitWidth="790.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                <image>
                   <Image url="@../../Grafiken/Equipment/Background_2.jpg" />
                </image>
             </ImageView>
-         </content>
-      </ScrollPane>
-      <ImageView fx:id="robber2" fitHeight="50.0" fitWidth="50.0" layoutX="636.0" layoutY="425.0" pickOnBounds="true" preserveRatio="true">
+         </center>
+         <top>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="900.0" spacing="10.0" style="-fx-background-color: darkgrey;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Grafiken/PolicemanPics/policeman_1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Grafiken/PolicemanPics/policeman_2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Grafiken/PolicemanPics/policeman_3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Grafiken/PolicemanPics/policeman_4.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Grafiken/PolicemanPics/policeman_5.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </top>
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="900.0" style="-fx-background-color: darkgrey;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" onMouseEntered="#zoomCard" onMouseExited="#unZoomCard">
+                     <image>
+                        <Image url="@../../Grafiken/Cards/Aktionskarte_Verteidigen.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" onMouseEntered="#zoomCard" onMouseExited="#unZoomCard" translateX="-20.0">
+                     <image>
+                        <Image url="@../../Grafiken/Cards/Aktionskarte_Aufrüsten.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" onMouseEntered="#zoomCard" onMouseExited="#unZoomCard" translateX="-40.0">
+                     <image>
+                        <Image url="@../../Grafiken/Cards/Aktionskarte_Verstärkung.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" onMouseEntered="#zoomCard" onMouseExited="#unZoomCard" translateX="-60.0">
+                     <image>
+                        <Image url="@../../Grafiken/Cards/Aktionskarte_Schießen.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" onMouseEntered="#zoomCard" onMouseExited="#unZoomCard" translateX="-80.0">
+                     <image>
+                        <Image url="@../../Grafiken/Cards/Aktionskarte_Festnehmen.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </bottom>
+         <left>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Spieler 1" textAlignment="CENTER" wrappingWidth="99.0">
+                     <font>
+                        <Font name="Corbel Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="99.0">
+                     <font>
+                        <Font name="Corbel Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Punkte:" textAlignment="CENTER" wrappingWidth="99.0">
+                     <font>
+                        <Font name="Corbel Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="99.0">
+                     <font>
+                        <Font name="Corbel Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Leben:" textAlignment="CENTER" wrappingWidth="99.0">
+                     <font>
+                        <Font name="Corbel Bold" size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+         </left>
+         <right>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Spieler 2" textAlignment="CENTER" wrappingWidth="99.0">
+                     <font>
+                        <Font name="Corbel Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="99.0">
+                     <font>
+                        <Font name="Corbel Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Punkte:" textAlignment="CENTER" wrappingWidth="99.0">
+                     <font>
+                        <Font name="Corbel Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="99.0">
+                     <font>
+                        <Font name="Corbel Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Leben:" textAlignment="CENTER" wrappingWidth="99.0">
+                     <font>
+                        <Font name="Corbel Bold" size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+         </right>
+      </BorderPane>
+      <ImageView fx:id="robber2" fitHeight="50.0" fitWidth="50.0" layoutX="597.0" layoutY="441.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Grafiken/RobberPics/Robber_1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="robber1" fitHeight="50.0" fitWidth="50.0" layoutX="483.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="robber1" fitHeight="50.0" fitWidth="50.0" layoutX="681.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Grafiken/RobberPics/Robber_2.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="robber3" fitHeight="50.0" fitWidth="50.0" layoutX="244.0" layoutY="342.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="robber3" fitHeight="50.0" fitWidth="50.0" layoutX="209.0" layoutY="346.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Grafiken/RobberPics/Robber_3.png" />
          </image>
@@ -37,63 +165,5 @@
             <Image url="@../../Grafiken/PolicemanPics/policeman_2.png" />
          </image>
       </ImageView>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1024.0" spacing="10.0" style="-fx-background-color: darkgrey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-         <children>
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Grafiken/PolicemanPics/policeman_1.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Grafiken/PolicemanPics/policeman_2.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Grafiken/PolicemanPics/policeman_3.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Grafiken/PolicemanPics/policeman_4.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Grafiken/PolicemanPics/policeman_5.png" />
-               </image>
-            </ImageView>
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" layoutY="510.0" prefHeight="101.0" prefWidth="900.0" style="-fx-background-color: darkgrey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="500.0">
-         <children>
-            <ImageView fitHeight="80.0" fitWidth="80.0" onMouseEntered="#zoomCard" onMouseExited="#unZoomCard">
-               <image>
-                  <Image url="@../../Grafiken/Cards/Aktionskarte_Verteidigen.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" onMouseEntered="#zoomCard" onMouseExited="#unZoomCard" translateX="-20.0">
-               <image>
-                  <Image url="@../../Grafiken/Cards/Aktionskarte_Aufrüsten.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" onMouseEntered="#zoomCard" onMouseExited="#unZoomCard" translateX="-40.0">
-               <image>
-                  <Image url="@../../Grafiken/Cards/Aktionskarte_Verstärkung.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" onMouseEntered="#zoomCard" onMouseExited="#unZoomCard" translateX="-60.0">
-               <image>
-                  <Image url="@../../Grafiken/Cards/Aktionskarte_Schießen.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" onMouseEntered="#zoomCard" onMouseExited="#unZoomCard" translateX="-80.0">
-               <image>
-                  <Image url="@../../Grafiken/Cards/Aktionskarte_Festnehmen.jpg" />
-               </image>
-            </ImageView>
-         </children>
-      </HBox>
    </children>
 </AnchorPane>

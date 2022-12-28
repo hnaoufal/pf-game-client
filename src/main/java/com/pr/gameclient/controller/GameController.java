@@ -19,7 +19,6 @@ import java.util.ResourceBundle;
 
 public class GameController implements Initializable {
 
-    //Kollisionserkenner
     @FXML
     private AnchorPane scene;
     @FXML
@@ -33,9 +32,10 @@ public class GameController implements Initializable {
 
     private final MoveController moveController = new MoveController();
 
-    //Kollisionsprüfung wird zusammen mit einem AnimationTimer verwendet, der jeden Frame überprüft, ob es eine Kollision gegeben hat.
+    // Kollisionsprüfung wird zusammen mit einem AnimationTimer verwendet, der jeden Frame überprüft, ob es eine Kollision gibt
     AnimationTimer collisionTimer = new AnimationTimer() {
         public void handle(long timestamp) {
+
             collision(policeman, robber1, robber2, robber3);
         }
     };
@@ -46,7 +46,7 @@ public class GameController implements Initializable {
         collisionTimer.start();
     }
 
-    //Kollisionserkennung mithilfe der integrierten JavaFX-Funktion .intersects
+    // Kollisionserkennung mithilfe der integrierten JavaFX-Funktion .intersects
     public void collision(ImageView policeman, ImageView collisionRobber1, ImageView collisionRobber2, ImageView collisionRobber3){
         if (policeman.getBoundsInParent().intersects(collisionRobber1.getBoundsInParent())){
             System.out.println("Kollision mit Raeuber 1");

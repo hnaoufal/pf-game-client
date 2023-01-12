@@ -6,7 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.io.IOException;
 
@@ -18,8 +20,8 @@ public class MenuController {
     private Parent root;
 
     @FXML private TextField loginUser;
-
     @FXML private TextField loginPassword;
+    @FXML private VBox LoginPageVbox;
 
     public void setStage(Stage stage) {
 
@@ -68,6 +70,10 @@ public class MenuController {
         }
         catch(Exception e){
             System.out.println(e.toString());
+            if(LoginPageVbox.getChildren().size() == 1){ // Check, ob Label bereits von einem vorherigen Versuch da ist.
+                LoginPageVbox.getChildren().add(new Label("Der angegebene Account existiert nicht!"));
+            }
+            return;
         }
 
         root = FXMLLoader.load(getClass().getResource("Settings.fxml"));

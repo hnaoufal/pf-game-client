@@ -8,7 +8,7 @@ import java.net.URL;
 
 public class LoginController {
 
-    public void LoginAction(String user, String password) throws Exception{
+    public boolean LoginAction(String user, String password) throws Exception{
         String url = "http://localhost:8080/api/login";
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -40,5 +40,11 @@ public class LoginController {
 
         //print result
         System.out.println(response.toString());
+        if(responseCode == 200){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }

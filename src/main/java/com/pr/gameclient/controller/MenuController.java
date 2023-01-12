@@ -62,8 +62,6 @@ public class MenuController {
     // Login und zur Seite "Settings" springen
     @FXML
     public void onButtonLogin(ActionEvent event) throws IOException {
-        System.out.println("User: " + loginUser.getText());
-        System.out.println("Password: " + loginPassword.getText());
         try{
             LoginController LoginControl = new LoginController();
             LoginControl.LoginAction(loginUser.getText(), loginPassword.getText());

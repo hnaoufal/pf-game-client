@@ -20,7 +20,7 @@ public class LoginController {
         // Send post request
         con.setDoOutput(true);
         DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-        wr.writeBytes("{\"email\":\"" + user + "\",\"password\":\"" + password + "\"}");
+        wr.writeBytes("{\"email\": \"" + user + "\",\"password\": \"" + password + "\"}");
         wr.flush();
         wr.close();
 

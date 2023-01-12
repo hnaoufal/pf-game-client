@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.io.IOException;
 
@@ -15,6 +16,10 @@ public class MenuController {
     private Stage stage;
     private Scene sceneSwitcher;
     private Parent root;
+
+    @FXML private TextField loginUser;
+
+    @FXML private TextField loginPassword;
 
     public void setStage(Stage stage) {
 
@@ -57,6 +62,15 @@ public class MenuController {
     // Login und zur Seite "Settings" springen
     @FXML
     public void onButtonLogin(ActionEvent event) throws IOException {
+        System.out.println("User: " + loginUser.getText());
+        System.out.println("Password: " + loginPassword.getText());
+        try{
+            LoginController LoginControl = new LoginController();
+            LoginControl.LoginAction(loginUser.getText(), loginPassword.getText());
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+        }
 
         root = FXMLLoader.load(getClass().getResource("Settings.fxml"));
         sceneSwitcher = new Scene(root);
@@ -140,7 +154,7 @@ public class MenuController {
 
     @FXML
     public void onButtonStart(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("PoliceGame.fxml"));
+        root = FXMLLoader.load(getClass().getResource("RobberGame.fxml"));
         sceneSwitcher = new Scene(root);
         sceneSwitcher.getRoot().requestFocus();
 
@@ -148,4 +162,5 @@ public class MenuController {
         stage.setScene(sceneSwitcher);
         stage.show();
     }
+
 }

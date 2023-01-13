@@ -15,6 +15,7 @@ public class Player {
     {
         this.name = playerPoliceman;
         this.name = playerRobber;
+
         this.score = playerScore;
         handCards = new Vector();
         deckCards = new Vector();

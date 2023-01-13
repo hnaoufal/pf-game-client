@@ -1,11 +1,13 @@
 package com.pr.gameclient.models.persons;
 
 public class Robber extends Person {
-    Integer speed;
+    Integer stealth;
+    Integer skill;
 
-    Robber(String name, String assetSrc, Integer speed) {
+    Robber(String name, String assetSrc, Integer stealth, Integer skill) {
         super(name, assetSrc);
-        this.speed = speed;
+        this.stealth = stealth;
+        this.skill = skill;
     }
 
     @Override

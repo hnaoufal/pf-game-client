@@ -16,9 +16,5 @@ public abstract class Person implements AssetEntity {
         this.position = new Point(0, 0);
     }
 
-    public void move(Point building) {
-        System.out.println(building);
-    }
-
     abstract void move();
 }

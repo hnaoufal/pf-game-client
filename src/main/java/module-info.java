@@ -5,6 +5,9 @@ module com.pr.gameclient {
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
+    requires com.google.gson;
+    requires jakarta.websocket;
+    requires org.glassfish.tyrus.client;
 
     opens com.pr.gameclient to javafx.fxml;
     exports com.pr.gameclient;

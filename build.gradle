@@ -10,10 +10,11 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    google()
 }
 
 ext {
-    junitVersion = '5.8.2'
+    junitVersion = '5.9.2'
 }
 
 sourceCompatibility = '16'
@@ -34,11 +35,20 @@ javafx {
 }
 
 dependencies {
-    implementation('org.controlsfx:controlsfx:11.1.1')
+    implementation('org.controlsfx:controlsfx:11.1.2')
     implementation('com.dlsc.formsfx:formsfx-core:11.5.0') {
         exclude(group: 'org.openjfx')
     }
     implementation('org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0')
+
+    // JSON
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    // Websocket
+    implementation 'jakarta.websocket:jakarta.websocket-client-api:2.1.0'
+    implementation 'org.glassfish.tyrus:tyrus-client:2.1.0'
+    implementation 'org.glassfish.tyrus.bundles:tyrus-standalone-client:2.1.0'
+
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")

@@ -28,6 +28,7 @@ public class MenuController {
     @FXML private TextField registerUser;
     @FXML private TextField registerPassword;
     @FXML private TextField registerEmail;
+    @FXML private TextField registerPasswordRepeat;
     @FXML private VBox RegisterPageVbox;
 
     public void setStage(Stage stage) {
@@ -103,6 +104,16 @@ public class MenuController {
                 RegisterPageVbox.getChildren().remove(1);
             }
             RegisterPageVbox.getChildren().add(labelMissingField);
+            return;
+        }
+        // Check, ob die Passwortfelder übereinstimmen
+        if(!registerPassword.getText().equals(registerPasswordRepeat.getText())){
+            Label labelPasswordMatch = new Label("Passwörter sind nicht identisch!");
+            labelPasswordMatch.setTextFill(Color.RED);
+            if(RegisterPageVbox.getChildren().size() == 2){ // Check, ob Label bereits von einem vorherigen Versuch da ist.
+                RegisterPageVbox.getChildren().remove(1);
+            }
+            RegisterPageVbox.getChildren().add(labelPasswordMatch);
             return;
         }
         // Versuch Benutzer anzulegen.

@@ -80,7 +80,7 @@
                         <Font name="Corbel Bold" size="14.0" />
                      </font>
                   </Text>
-                  <TextField layoutX="278.0" layoutY="234.0" prefHeight="25.0" prefWidth="180.0" />
+                  <TextField fx:id="registerPasswordRepeat" layoutX="278.0" layoutY="234.0" prefHeight="25.0" prefWidth="180.0" />
                   <TextField fx:id="registerEmail" layoutX="92.0" layoutY="234.0" prefHeight="25.0" prefWidth="180.0" />
                   <Button layoutX="291.0" layoutY="281.0" mnemonicParsing="false" onAction="#onButtonRegistrierung" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" text="Registrierung" textFill="#464646">
                      <font>

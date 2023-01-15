@@ -1,16 +1,15 @@
 package com.pr.gameclient.services.ws.common.msginteraction.generic;
 
-//import com.google.gson.Gson;
+import com.google.gson.Gson;
 
 import java.util.regex.Pattern;
 
 public class Message {
     private static final String SEPARATOR = "|";
     private static final String split = Pattern.quote(SEPARATOR);
-//    private static Gson gson = new Gson();
+    private static Gson gson = new Gson();
     public static String toStringMessage(Object object) {
-//        return object.getClass().getName() + SEPARATOR + gson.toJson(object);
-        return "huhuhuh";
+        return object.getClass().getName() + SEPARATOR + gson.toJson(object);
     }
 
     public String className;

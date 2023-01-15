@@ -1,6 +1,7 @@
 package com.pr.gameclient;
 
 import com.pr.gameclient.controller.MenuController;
+import com.pr.gameclient.services.ws.client.ClientService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,7 +20,8 @@ public class Main extends Application {
         MenuController startWindowController = fxmlLoader.getController();
         startWindowController.setStage(stage);
 
-        //WsService.start();
+        ClientService cs = new ClientService();
+        cs.connect("localhost", "Hicham", System.out::println, System.out::println);
 
         Scene scene = new Scene(root);
         stage.setScene(scene);

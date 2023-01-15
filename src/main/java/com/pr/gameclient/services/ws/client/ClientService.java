@@ -9,17 +9,20 @@ public class ClientService {
     ClientEndpoint clientEndpoint;
 
     public void connect(String host, String login,
-            EventHandler<WorkerStateEvent> onSucceeded, EventHandler<WorkerStateEvent> onFailed) {
+                        EventHandler<WorkerStateEvent> onSucceeded, EventHandler<WorkerStateEvent> onFailed) {
         ConnectionTask connectionTask = new ConnectionTask(host, login);
 
         connectionTask.setOnSucceeded(event -> {
-//            clientEndpoint = connectionTask.getValue();
+            clientEndpoint = connectionTask.getValue();
             onSucceeded.handle(event);
         });
 
         connectionTask.setOnFailed(event -> {
                     onFailed.handle(event);
-                    System.out.println("Unable to connect");
+                    System.out.println(
+                            "Unable to connect " +
+                            connectionTask.getException()
+                    );
                 }
         );
 
@@ -33,6 +36,5 @@ public class ClientService {
     public void sendObject(Object object) {
         clientEndpoint.sendObject(object);
     }
-
 
 }

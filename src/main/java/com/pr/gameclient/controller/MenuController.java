@@ -146,7 +146,6 @@ public class MenuController {
     // Button "Zurück" zu den Settings
     @FXML
     public void onButtonZurueckZuSettings(ActionEvent event) throws IOException {
-
         root = FXMLLoader.load(getClass().getResource("Settings.fxml"));
         sceneSwitcher = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -178,4 +177,11 @@ public class MenuController {
         stage.show();
     }
 
+    public void onButtonRanking(ActionEvent actionEvent) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("HighScore.fxml"));
+        sceneSwitcher = new Scene(root);
+        Stage stage = (Stage) ((Node)  actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(sceneSwitcher);
+        stage.show();
+    }
 }

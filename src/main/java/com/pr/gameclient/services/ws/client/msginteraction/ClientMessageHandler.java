@@ -11,7 +11,6 @@ import java.util.Map;
 public class ClientMessageHandler<Y extends MessageHandler> extends AllMessageHandler {
     @Override
     protected void initHandleMap(Map<String, MessageHandler> handleMap) {
-        handleMap.put(LoginIndicatorMsg.class.getSimpleName(), new LoginIndicatorHandler());
         handleMap.put(UserInfoHelper.class.getSimpleName(), new UserInfoHelperHandler());
         handleMap.put(YouStepMsg.class.getSimpleName(), new YouStepHandler());
         handleMap.put(ReceiveScore.class.getSimpleName(), new ReceiveScoreHandler());

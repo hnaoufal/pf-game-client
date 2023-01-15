@@ -8,6 +8,9 @@ module com.pr.gameclient {
     requires com.google.gson;
     requires jakarta.websocket;
     requires org.glassfish.tyrus.client;
+    requires com.fasterxml.jackson.databind;
+    requires java.net.http;
+
 
     opens com.pr.gameclient to javafx.fxml, org.glassfish.tyrus.client, com.google.gson;
     exports com.pr.gameclient;
@@ -18,4 +21,7 @@ module com.pr.gameclient {
     opens com.pr.gameclient.services.ws.common.msginteraction to com.google.gson;
     opens com.pr.gameclient.services.ws.common to com.google.gson;
     opens com.pr.gameclient.controller to javafx.fxml;
+    exports com.pr.gameclient.models.game;
+    exports com.pr.gameclient.models.user;
+    opens com.pr.gameclient.models.game to javafx.fxml;
 }

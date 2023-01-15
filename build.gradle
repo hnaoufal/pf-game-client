@@ -48,6 +48,8 @@ dependencies {
     implementation 'jakarta.websocket:jakarta.websocket-client-api:2.1.0'
     implementation 'org.glassfish.tyrus:tyrus-client:2.1.0'
     implementation 'org.glassfish.tyrus.bundles:tyrus-standalone-client:2.1.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.0'
+    implementation 'com.squareup.okhttp3:okhttp-jvm:5.0.0-alpha.11'
 
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")

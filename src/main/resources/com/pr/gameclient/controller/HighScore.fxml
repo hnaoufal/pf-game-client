@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Button?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.pr.gameclient.controller.HighScoreController">
+
+    <Label text="High Scores">
+        <font>
+            <Font name="Corbel Bold" size="18.0" />
+        </font>
+    </Label>
+
+    <TableView fx:id="highScoreTable" prefHeight="200">
+        <columns>
+            <TableColumn text="Name" fx:id="nameColumn" minWidth="100" />
+            <TableColumn text="Points" fx:id="pointsColumn" minWidth="100" />
+        </columns>
+    </TableView>
+    <Button fx:id="backButton" onAction="#handleBackButton" text="Back"/>
+
+</VBox>

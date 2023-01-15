@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
@@ -24,6 +25,10 @@ public class MenuController {
     @FXML private TextField loginUser;
     @FXML private TextField loginPassword;
     @FXML private VBox LoginPageVbox;
+    @FXML private TextField registerUser;
+    @FXML private TextField registerPassword;
+    @FXML private TextField registerEmail;
+    @FXML private VBox RegisterPageVbox;
 
     public void setStage(Stage stage) {
 
@@ -88,11 +93,40 @@ public class MenuController {
     // Registrierung und zur Seite "Settings" springen
     @FXML
     public void onButtonRegistrierung(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("Settings.fxml"));
-        sceneSwitcher = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(sceneSwitcher);
-        stage.show();
+        // Check, ob alle Felder ausgefüllt sind und Anzeige Hinweis, falls nicht
+        if(registerUser.getText().equals("") ||
+           registerEmail.getText().equals("") ||
+           registerPassword.getText().equals("")){
+            Label labelMissingField = new Label("Bitte alle Felder vollständig ausfüllen!");
+            labelMissingField.setTextFill(Color.RED);
+            if(RegisterPageVbox.getChildren().size() == 2){ // Check, ob Label bereits von einem vorherigen Versuch da ist.
+                RegisterPageVbox.getChildren().remove(1);
+            }
+            RegisterPageVbox.getChildren().add(labelMissingField);
+            return;
+        }
+        // Versuch Benutzer anzulegen.
+        // Response Code 200 = Benutzer erfolgreich angelegt
+        // Exception = Benutzer existiert schon, oder anderer Fehler (Wird bisher nicht behandelt)
+        try{
+            LoginController LoginControl = new LoginController();
+            LoginControl.RegisterAction(registerUser.getText(), registerEmail.getText(), registerPassword.getText());
+            Label labelSuccess = new Label("Account erfolgreich angelegt!");
+            labelSuccess.setTextFill(Color.GREEN);
+            if(RegisterPageVbox.getChildren().size() == 2){ // Check, ob Label bereits von einem vorherigen Versuch da ist.
+                RegisterPageVbox.getChildren().remove(1);
+            }
+            RegisterPageVbox.getChildren().add(labelSuccess);
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+            Label labelFail = new Label("Ein Account mit dieser Email existiert bereits!");
+            labelFail.setTextFill(Color.RED);
+            if(RegisterPageVbox.getChildren().size() == 2){ // Check, ob Label bereits von einem vorherigen Versuch da ist.
+                RegisterPageVbox.getChildren().remove(1);
+            }
+            RegisterPageVbox.getChildren().add(labelFail);
+        }
     }
 
     // Zu den Einstellungen des Officers

@@ -54,11 +54,11 @@ public class HighScoreController {
             e.printStackTrace();
         }
     }
-
+    @FXML
     public void handleBackButton(ActionEvent actionEvent) throws IOException {
         backButton.getScene().getWindow().hide();
 
-        Parent root = FXMLLoader.load(getClass().getResource("Start.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/pr/gameclient/Start.fxml"));
         Scene sceneSwitcher = new Scene(root);
         Stage stage = (Stage) ((Node)  actionEvent.getSource()).getScene().getWindow();
         stage.setScene(sceneSwitcher);

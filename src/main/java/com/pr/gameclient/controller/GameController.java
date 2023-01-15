@@ -1,20 +1,21 @@
 package com.pr.gameclient.controller;
 
+import com.pr.gameclient.services.ws.common.msginteraction.message.ChatMessage;
+import com.pr.gameclient.services.ws.mvp.ClientPresenter;
 import javafx.animation.AnimationTimer;
 import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
-import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class GameController implements Initializable {
@@ -30,9 +31,15 @@ public class GameController implements Initializable {
     @FXML
     private ImageView robber3;
 
+    @FXML
+    private Button chatButton;
+
+    @FXML
+    private TextArea chat;
+
+
     private final MoveController moveController = new MoveController();
 
-    // Kollisionsprüfung wird zusammen mit einem AnimationTimer verwendet, der jeden Frame überprüft, ob es eine Kollision gibt
     AnimationTimer collisionTimer = new AnimationTimer() {
         public void handle(long timestamp) {
 
@@ -116,5 +123,15 @@ public class GameController implements Initializable {
 
             count++;
         }
+    }
+
+    @FXML
+    public void onChatSend() {
+        ClientPresenter.getInstance().sendToServer(new ChatMessage(chat.getText()));
+    }
+
+    @FXML
+    public void updateChat(String text) {
+        chat.appendText(text);
     }
 }

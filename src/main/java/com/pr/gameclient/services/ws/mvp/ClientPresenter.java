@@ -26,11 +26,7 @@ public class ClientPresenter {
     }
 
     public void checkLogIn(LoginIndicatorMsg indicator) {
-        if (indicator.isLogin()) {
-            Platform.runLater(successLoginAction::action);
-        } else {
-            Platform.runLater(viewController::badLogIn);
-        }
+        // I think not need for now. Not enough time
     }
 
     public void refreshVisualizationUserInfo() {

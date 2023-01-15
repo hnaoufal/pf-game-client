@@ -44,6 +44,7 @@ public class ClientEndpoint {
 
     @OnClose
     public void onClose(Session session) {
+        System.out.println("Closing connction" + session.getId());
         this.session = null;
     }
 

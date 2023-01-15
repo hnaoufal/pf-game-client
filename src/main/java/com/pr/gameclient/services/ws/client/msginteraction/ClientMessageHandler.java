@@ -11,11 +11,12 @@ import java.util.Map;
 public class ClientMessageHandler<Y extends MessageHandler> extends AllMessageHandler {
     @Override
     protected void initHandleMap(Map<String, MessageHandler> handleMap) {
-        handleMap.put(LoginIndicatorMsg.class.getName(), new LoginIndicatorHandler());
-        handleMap.put(UserInfoHelper.class.getName(), new UserInfoHelperHandler());
-        handleMap.put(YouStepMsg.class.getName(), new YouStepHandler());
-        handleMap.put(ReceiveScore.class.getName(), new ReceiveScoreHandler());
-        handleMap.put(FinishGame.class.getName(), new FinishGameHandler());
-        handleMap.put(StartGame.class.getName(), new StartGameHandler());
+        handleMap.put(LoginIndicatorMsg.class.getSimpleName(), new LoginIndicatorHandler());
+        handleMap.put(UserInfoHelper.class.getSimpleName(), new UserInfoHelperHandler());
+        handleMap.put(YouStepMsg.class.getSimpleName(), new YouStepHandler());
+        handleMap.put(ReceiveScore.class.getSimpleName(), new ReceiveScoreHandler());
+        handleMap.put(FinishGame.class.getSimpleName(), new FinishGameHandler());
+        handleMap.put(StartGame.class.getSimpleName(), new StartGameHandler());
+        handleMap.put(ChatMessage.class.getSimpleName(), new ChatMessageHandler());
     }
 }

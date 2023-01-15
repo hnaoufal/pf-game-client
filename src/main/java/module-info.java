@@ -15,5 +15,7 @@ module com.pr.gameclient {
     exports com.pr.gameclient.services.ws.client;
     exports com.pr.gameclient.services.ws.common;
     opens com.pr.gameclient.services.ws.common.msginteraction.message to com.google.gson;
+    opens com.pr.gameclient.services.ws.common.msginteraction to com.google.gson;
+    opens com.pr.gameclient.services.ws.common to com.google.gson;
     opens com.pr.gameclient.controller to javafx.fxml;
 }

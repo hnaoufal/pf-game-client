@@ -9,7 +9,7 @@ public class Message {
     private static final String split = Pattern.quote(SEPARATOR);
     private static Gson gson = new Gson();
     public static String toStringMessage(Object object) {
-        return object.getClass().getName() + SEPARATOR + gson.toJson(object);
+        return object.getClass().getSimpleName() + SEPARATOR + gson.toJson(object);
     }
 
     public String className;

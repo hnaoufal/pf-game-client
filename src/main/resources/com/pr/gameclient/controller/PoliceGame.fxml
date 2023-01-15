@@ -10,6 +10,8 @@
 <?import javafx.scene.text.Text?>
 
 
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Button?>
 <AnchorPane fx:id="scene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="990.0" style="-fx-background-color: darkgrey;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pr.gameclient.controller.GameController">
    <children>
       <BorderPane>
@@ -80,6 +82,10 @@
                      </image>
                   </ImageView>
                </children>
+            </HBox>
+            <HBox>
+               <TextArea fx:id="chat">huhu</TextArea>
+               <Button fx:id="chatButton" onAction="#onChatSend">Send</Button>
             </HBox>
          </bottom>
          <left>

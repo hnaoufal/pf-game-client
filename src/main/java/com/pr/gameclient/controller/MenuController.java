@@ -1,5 +1,6 @@
 package com.pr.gameclient.controller;
 
+import com.pr.gameclient.Context;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.Objects;
 
 public class MenuController {
 
@@ -86,7 +88,6 @@ public class MenuController {
     // Registrierung und zur Seite "Settings" springen
     @FXML
     public void onButtonRegistrierung(ActionEvent event) throws IOException {
-
         root = FXMLLoader.load(getClass().getResource("Settings.fxml"));
         sceneSwitcher = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -97,7 +98,6 @@ public class MenuController {
     // Zu den Einstellungen des Officers
     @FXML
     public void onButtonOfficer(ActionEvent event) throws IOException {
-
         root = FXMLLoader.load(getClass().getResource("Policeman.fxml"));
         sceneSwitcher = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -119,8 +119,13 @@ public class MenuController {
     // Button "Game" um Spiel zu starten
     @FXML
     public void onButtonGame(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Game_Alt.fxml"));
+        root = loader.load();
+        GameController controller = loader.getController();
 
-        root = FXMLLoader.load(getClass().getResource("Game_Alt.fxml"));
+        Context context = Context.getInstance();
+        context.setLoader(loader);
+        context.setGameController(controller);
         sceneSwitcher = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(sceneSwitcher);
@@ -158,7 +163,13 @@ public class MenuController {
 
     @FXML
     public void onButtonStart(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("RobberGame.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("PoliceGame.fxml"));
+        root = loader.load();
+        GameController controller = loader.getController();
+
+        Context context = Context.getInstance();
+        context.setLoader(loader);
+        context.setGameController(controller);
         sceneSwitcher = new Scene(root);
         sceneSwitcher.getRoot().requestFocus();
 

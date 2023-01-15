@@ -17,6 +17,7 @@ public abstract class AllMessageHandler {
     public final void handle(Session session, String message) {
         final Message msg = Message.fromString(message);
         final MessageHandler messageHandler = handleMap.get(msg.className);
+
         if (messageHandler!=null) {
             messageHandler.run(session, msg.data);
         }

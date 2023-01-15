@@ -29,7 +29,7 @@ public class MenuController {
     @FXML private TextField registerPassword;
     @FXML private TextField registerEmail;
     @FXML private TextField registerPasswordRepeat;
-    @FXML private VBox RegisterPageVbox;
+    @FXML VBox registerPageVbox;
 
     public void setStage(Stage stage) {
 
@@ -79,7 +79,7 @@ public class MenuController {
         catch(Exception e){
             System.out.println(e.toString());
             if(LoginPageVbox.getChildren().size() == 1){ // Check, ob Label bereits von einem vorherigen Versuch da ist.
-                LoginPageVbox.getChildren().add(new Label("Der angegebene Account existiert nicht!"));
+                addLabel("Der angegebene Account existiert nicht!", Color.RED, LoginPageVbox);
             }
             return;
         }
@@ -94,26 +94,18 @@ public class MenuController {
     // Registrierung und zur Seite "Settings" springen
     @FXML
     public void onButtonRegistrierung(ActionEvent event) throws IOException {
+        // Check, ob Label bereits von einem vorherigen Versuch da ist.
+        if(registerPageVbox.getChildren().size() == 2){
+            registerPageVbox.getChildren().remove(1);
+        }
         // Check, ob alle Felder ausgefüllt sind und Anzeige Hinweis, falls nicht
-        if(registerUser.getText().equals("") ||
-           registerEmail.getText().equals("") ||
-           registerPassword.getText().equals("")){
-            Label labelMissingField = new Label("Bitte alle Felder vollständig ausfüllen!");
-            labelMissingField.setTextFill(Color.RED);
-            if(RegisterPageVbox.getChildren().size() == 2){ // Check, ob Label bereits von einem vorherigen Versuch da ist.
-                RegisterPageVbox.getChildren().remove(1);
-            }
-            RegisterPageVbox.getChildren().add(labelMissingField);
+        if(registerUser.getText().equals("") || registerEmail.getText().equals("") || registerPassword.getText().equals("")){
+            addLabel("Bitte alle Felder vollständig ausfüllen!", Color.RED, registerPageVbox);
             return;
         }
         // Check, ob die Passwortfelder übereinstimmen
         if(!registerPassword.getText().equals(registerPasswordRepeat.getText())){
-            Label labelPasswordMatch = new Label("Passwörter sind nicht identisch!");
-            labelPasswordMatch.setTextFill(Color.RED);
-            if(RegisterPageVbox.getChildren().size() == 2){ // Check, ob Label bereits von einem vorherigen Versuch da ist.
-                RegisterPageVbox.getChildren().remove(1);
-            }
-            RegisterPageVbox.getChildren().add(labelPasswordMatch);
+            addLabel("Passwörter sind nicht identisch!", Color.RED, registerPageVbox);
             return;
         }
         // Versuch Benutzer anzulegen.
@@ -122,21 +114,11 @@ public class MenuController {
         try{
             LoginController LoginControl = new LoginController();
             LoginControl.RegisterAction(registerUser.getText(), registerEmail.getText(), registerPassword.getText());
-            Label labelSuccess = new Label("Account erfolgreich angelegt!");
-            labelSuccess.setTextFill(Color.GREEN);
-            if(RegisterPageVbox.getChildren().size() == 2){ // Check, ob Label bereits von einem vorherigen Versuch da ist.
-                RegisterPageVbox.getChildren().remove(1);
-            }
-            RegisterPageVbox.getChildren().add(labelSuccess);
+            addLabel("Account erfolgreich angelegt!", Color.GREEN, registerPageVbox);
         }
         catch(Exception e){
             System.out.println(e.toString());
-            Label labelFail = new Label("Ein Account mit dieser Email existiert bereits!");
-            labelFail.setTextFill(Color.RED);
-            if(RegisterPageVbox.getChildren().size() == 2){ // Check, ob Label bereits von einem vorherigen Versuch da ist.
-                RegisterPageVbox.getChildren().remove(1);
-            }
-            RegisterPageVbox.getChildren().add(labelFail);
+            addLabel("Ein Account mit dieser Email existiert bereits!", Color.RED, registerPageVbox);
         }
     }
 
@@ -228,5 +210,11 @@ public class MenuController {
         Stage stage = (Stage) ((Node)  actionEvent.getSource()).getScene().getWindow();
         stage.setScene(sceneSwitcher);
         stage.show();
+    }
+
+    public void addLabel(String text, Color color, VBox container){
+        Label newLabel = new Label(text);
+        newLabel.setTextFill(color);
+        container.getChildren().add(newLabel);
     }
 }

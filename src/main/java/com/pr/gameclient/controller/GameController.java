@@ -1,20 +1,27 @@
 package com.pr.gameclient.controller;
 
+import com.pr.gameclient.services.ws.common.msginteraction.message.ChatMessage;
+import com.pr.gameclient.services.ws.mvp.ClientPresenter;
 import javafx.animation.AnimationTimer;
 import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class GameController implements Initializable {
@@ -22,39 +29,66 @@ public class GameController implements Initializable {
     @FXML
     private AnchorPane scene;
     @FXML
-    private ImageView policeman;
+    private ImageView robber;
     @FXML
-    private ImageView robber1;
+    private ImageView bank;
     @FXML
-    private ImageView robber2;
+    private ImageView jeweler;
     @FXML
-    private ImageView robber3;
+    private ImageView museum;
+    @FXML
+    private Button chatButton;
+    @FXML
+    private TextArea chat;
 
     private final MoveController moveController = new MoveController();
 
-    // Kollisionsprüfung wird zusammen mit einem AnimationTimer verwendet, der jeden Frame überprüft, ob es eine Kollision gibt
     AnimationTimer collisionTimer = new AnimationTimer() {
         public void handle(long timestamp) {
 
-            collision(policeman, robber1, robber2, robber3);
+            collision(robber, bank, jeweler, museum);
         }
     };
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        moveController.move(scene, policeman);
+        moveController.move(scene, robber);
         collisionTimer.start();
     }
 
     // Kollisionserkennung mithilfe der integrierten JavaFX-Funktion .intersects
-    public void collision(ImageView policeman, ImageView collisionRobber1, ImageView collisionRobber2, ImageView collisionRobber3){
-        if (policeman.getBoundsInParent().intersects(collisionRobber1.getBoundsInParent())){
-            System.out.println("Kollision mit Raeuber 1");
-        } else if (policeman.getBoundsInParent().intersects(collisionRobber2.getBoundsInParent())){
-            System.out.println("Kollision mit Raeuber 2");
-        } else if (policeman.getBoundsInParent().intersects(collisionRobber3.getBoundsInParent())){
-            System.out.println("Kollision mit Raeuber 3");
+    public void collision(ImageView policeman, ImageView collisionBank, ImageView collisionMuseum, ImageView collisionJeweler){
+        if (policeman.getBoundsInParent().intersects(collisionBank.getBoundsInParent())){
+            System.out.println("Kollision mit Bank");
+        } else if (policeman.getBoundsInParent().intersects(collisionMuseum.getBoundsInParent())){
+            System.out.println("Kollision mit Museum");
+        } else if (policeman.getBoundsInParent().intersects(collisionJeweler.getBoundsInParent())){
+            System.out.println("Kollision mit Juweliergeschaeft");
         }
+    }
+
+    // Button "Zurück" zu den Settings
+    @FXML
+    public void onButtonZurueck(ActionEvent event) throws IOException {
+
+        Parent root;
+        Scene sceneSwitcher;
+
+        root = FXMLLoader.load(getClass().getResource("Settings.fxml"));
+        sceneSwitcher = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(sceneSwitcher);
+        stage.show();
+    }
+
+    // Button "Reset" um Spiel zurückzusetzen
+    @FXML
+    public void onButtonReset(ActionEvent event) throws IOException {
+
+        robber.setLayoutX(110);
+        robber.setLayoutY(215);
+        //scoreCounter = 0;
+        //score.setText(String.valueOf(scoreCounter));
     }
 
     // Rückt die Karte, über der die Maus hovered nach oben und vergrößert sie. vorhergehende Karten rücken nach links
@@ -89,7 +123,6 @@ public class GameController implements Initializable {
             tt.play();
             count++;
         }
-
     }
 
     // Stellt den Orioginalzustand wieder her, wenn man nicht mehr über einer Karte hovered
@@ -116,5 +149,15 @@ public class GameController implements Initializable {
 
             count++;
         }
+    }
+
+    @FXML
+    public void onChatSend() {
+        ClientPresenter.getInstance().sendToServer(new ChatMessage(chat.getText()));
+    }
+
+    @FXML
+    public void updateChat(String text) {
+        chat.appendText(text);
     }
 }

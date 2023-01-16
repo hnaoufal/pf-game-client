@@ -3,13 +3,10 @@
 <!--
   Copyright (c) 2015, 2019, Gluon and/or its affiliates.
   All rights reserved. Use is subject to license terms.
-
   This file is available and licensed under the following license:
-
   Redistribution and use in source and binary forms, with or without
   modification, are permitted provided that the following conditions
   are met:
-
   - Redistributions of source code must retain the above copyright
     notice, this list of conditions and the following disclaimer.
   - Redistributions in binary form must reproduce the above copyright
@@ -18,7 +15,6 @@
   - Neither the name of Oracle Corporation nor the names of its
     contributors may be used to endorse or promote products derived
     from this software without specific prior written permission.
-
   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
   "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
   LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
@@ -41,55 +37,59 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pr.gameclient.controller.MenuController">
+<AnchorPane focusTraversable="true" maxHeight="-1.0" maxWidth="-1.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: darkgrey;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pr.gameclient.controller.MenuController">
    <children>
-      <AnchorPane focusTraversable="true" maxHeight="-1.0" maxWidth="-1.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: darkgrey;" VBox.vgrow="ALWAYS">
+      <ImageView fitHeight="400.0" fitWidth="600.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Grafiken/Equipment/Absperrband.jpg" />
+         </image>
+      </ImageView>
+      <VBox fx:id="registerPageVbox" alignment="CENTER" layoutX="28.0" layoutY="9.515998840332031" prefWidth="250.0">
          <children>
-            <ImageView fitHeight="250.0" fitWidth="550.0" layoutX="50.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
-               <image>
-                  <Image url="@../../Grafiken/Equipment/Absperrband.jpg" />
-               </image>
-            </ImageView>
-            <TextField layoutX="307.0" layoutY="197.0" prefHeight="25.0" prefWidth="180.0" />
-            <Text fill="WHITE" layoutX="307.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passwort wiederholen">
-               <font>
-                  <Font name="Corbel Bold" size="14.0" />
-               </font>
-            </Text>
-            <TextField layoutX="307.0" layoutY="144.0" prefHeight="25.0" prefWidth="180.0" />
-            <Text fill="WHITE" layoutX="307.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passwort">
-               <font>
-                  <Font name="Corbel Bold" size="14.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="153.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="game">
-               <font>
-                  <Font name="Corbel Bold Italic" size="30.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="222.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrierung">
-               <font>
-                  <Font name="Corbel Bold" size="36.0" />
-               </font>
-            </Text>
-            <TextField layoutX="113.0" layoutY="197.0" prefHeight="25.0" prefWidth="180.0" />
-            <Text fill="WHITE" layoutX="113.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Mail">
-               <font>
-                  <Font name="Corbel Bold" size="14.0" />
-               </font>
-            </Text>
-            <TextField layoutX="113.0" layoutY="144.0" prefHeight="25.0" prefWidth="180.0" />
-            <Text fill="WHITE" layoutX="113.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
-               <font>
-                  <Font name="Corbel Bold" size="14.0" />
-               </font>
-            </Text>
-            <Button layoutX="241.0" layoutY="246.0" mnemonicParsing="false" onAction="#onButtonRegistrierung" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" text="Registrierung" textFill="#464646">
-               <font>
-                  <Font name="Corbel Bold" size="14.0" />
-               </font>
-            </Button>
+            <AnchorPane>
+               <children>
+                  <Text fill="WHITE" layoutX="275.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passwort">
+                     <font>
+                        <Font name="Corbel Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="90.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                     <font>
+                        <Font name="Corbel Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="registerPassword" layoutX="275.0" layoutY="162.0" prefHeight="25.0" prefWidth="180.0" />
+                  <TextField fx:id="registerUser" layoutX="89.0" layoutY="162.0" prefHeight="25.0" prefWidth="180.0" />
+                  <Text fill="WHITE" layoutX="275.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passwort wiederholen">
+                     <font>
+                        <Font name="Corbel Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="89.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Mail">
+                     <font>
+                        <Font name="Corbel Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="registerPasswordRepeat" layoutX="275.0" layoutY="221.0" prefHeight="25.0" prefWidth="180.0" />
+                  <TextField fx:id="registerEmail" layoutX="89.0" layoutY="221.0" prefHeight="25.0" prefWidth="180.0" />
+                  <Button layoutX="288.0" layoutY="268.0" mnemonicParsing="false" onAction="#onButtonRegistrierung" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" text="Registrierung" textFill="#464646">
+                     <font>
+                        <Font name="Corbel Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="119.0" layoutY="268.0" mnemonicParsing="false" onAction="#onButtonZurueckZumStart" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" text="Zurück" textFill="#464646">
+                     <font>
+                        <Font name="Corbel Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Text fill="WHITE" layoutX="167.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrierung">
+                     <font>
+                        <Font name="Corbel Bold" size="36.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
          </children>
-      </AnchorPane>
+      </VBox>
    </children>
-</VBox>
+</AnchorPane>

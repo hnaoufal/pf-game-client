@@ -8,6 +8,7 @@ import jakarta.websocket.*;
 
 import java.io.IOException;
 
+@jakarta.websocket.ClientEndpoint()
 public class ClientEndpoint {
     private final String login;
 
@@ -23,7 +24,8 @@ public class ClientEndpoint {
         this.session = session;
         ClientPresenter.getInstance().setClientEndpoint(this);
 
-        System.out.println("huhuh");
+        System.out.println("Sending request: '" + login + "' with session " + session.getId());
+
         sendObject(new LoginMessage(login));
     }
 
@@ -35,13 +37,15 @@ public class ClientEndpoint {
     @OnError
     public void onError(Session session, Throwable throwable) {
         System.out.println("Communication error, saying hello to '" + login + "' with session " + session.getId());
+        System.out.println(throwable);
 
         this.session = null;
     }
 
     @OnClose
     public void onClose(Session session) {
-            this.session = null;
+        System.out.println("Closing connction" + session.getId());
+        this.session = null;
     }
 
     public void sendObject(Object obj) {
@@ -50,6 +54,7 @@ public class ClientEndpoint {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println("Message send" + Message.toStringMessage(obj));
     }
 
     public void sendText(String text) {

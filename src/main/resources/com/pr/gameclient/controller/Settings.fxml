@@ -60,7 +60,7 @@
                   <Insets />
                </opaqueInsets>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="443.0" layoutY="133.0" prefHeight="40.0" prefWidth="120.0" text="Shop" textFill="WHITE">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="443.0" layoutY="133.0" prefHeight="40.0" prefWidth="120.0" text="Ranking" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="18.0" />
                </font>
@@ -76,7 +76,7 @@
                   <Insets />
                </opaqueInsets>
             </Label>
-            <Button layoutX="58.0" layoutY="278.0" mnemonicParsing="false" onAction="#onButtonStart" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: grey;" text="Resume" textFill="WHITE">
+            <Button layoutX="58.0" layoutY="280.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: grey;" text="Resume" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="14.0" />
                </font>
@@ -91,12 +91,12 @@
                   <Font name="Corbel Bold" size="36.0" />
                </font>
             </Text>
-            <Button layoutX="58.0" layoutY="234.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: grey;" text="Restart" textFill="WHITE">
+            <Button layoutX="58.0" layoutY="237.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: grey;" text="Restart" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="58.0" layoutY="322.0" mnemonicParsing="false" onAction="#onButtonZurueckZumStart" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: grey;" text="Zurück" textFill="WHITE">
+            <Button layoutX="58.0" layoutY="323.0" mnemonicParsing="false" onAction="#onButtonZurueckZumStart" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: grey;" text="Zurück" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="14.0" />
                </font>

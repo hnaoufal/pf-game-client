@@ -1,6 +1,7 @@
 package com.pr.gameclient;
 
 import com.pr.gameclient.controller.MenuController;
+import com.pr.gameclient.services.ws.client.ClientService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Random;
 
 public class Main extends Application {
 
@@ -19,7 +21,11 @@ public class Main extends Application {
         MenuController startWindowController = fxmlLoader.getController();
         startWindowController.setStage(stage);
 
-        //WsService.start();
+        Context context = Context.getInstance();
+        context.setLoader(fxmlLoader);
+
+        ClientService cs = new ClientService();
+        cs.connect("localhost", "Hicham" + gen(), System.out::println, System.out::println);
 
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -27,7 +33,13 @@ public class Main extends Application {
         stage.show();
     }
 
+    public int gen() {
+        Random r = new Random( System.currentTimeMillis() );
+        return 10000 + r.nextInt(20000);
+    }
+
     public static void main(String[] args) {
+
         launch(args);
     }
 }

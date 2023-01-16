@@ -21,7 +21,7 @@
                         <Image url="@../Grafiken/RobberPics/Dieb_gefasst.jpg" />
                      </image>
                   </ImageView>
-                  <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="420.0" layoutY="126.0" opacity="0.6" prefHeight="205.0" prefWidth="160.0" style="-fx-background-color: black;" textFill="WHITE">
+                  <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="420.0" layoutY="98.0" opacity="0.6" prefHeight="260.0" prefWidth="160.0" style="-fx-background-color: black;" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="18.0" />
                      </font>
@@ -37,22 +37,27 @@
                         <Insets />
                      </opaqueInsets>
                   </Label>
-                  <Button layoutX="440.0" layoutY="144.0" mnemonicParsing="false" onAction="#onButtonAnleitung" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" text="Das Spiel" textFill="#464646">
+                  <Button layoutX="439.0" layoutY="117.0" mnemonicParsing="false" onAction="#onButtonAnleitung" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" text="Das Spiel" textFill="#464646">
                      <font>
                         <Font name="Corbel Bold" size="16.0" />
                      </font>
                   </Button>
-                  <Button layoutX="440.0" layoutY="191.0" mnemonicParsing="false" onAction="#onButtonZumLogin" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" text="Login" textFill="#464646">
+                  <Button layoutX="439.0" layoutY="165.0" mnemonicParsing="false" onAction="#onButtonZumLogin" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" text="Login" textFill="#464646">
                      <font>
                         <Font name="Corbel Bold" size="16.0" />
                      </font>
                   </Button>
-                  <Button layoutX="440.0" layoutY="283.0" mnemonicParsing="false" onAction="#onButtonEnde" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" text="Ende" textFill="#464646">
+                  <Button layoutX="439.0" layoutY="262.0" mnemonicParsing="false" onAction="#onButtonRanking" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" text="Ranking" textFill="#464646">
                      <font>
                         <Font name="Corbel Bold" size="16.0" />
                      </font>
                   </Button>
-                  <Button layoutX="440.0" layoutY="237.0" mnemonicParsing="false" onAction="#onButtonZurRegistrierung" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" text="Registrierung" textFill="#464646">
+                  <Button layoutX="439.0" layoutY="310.0" mnemonicParsing="false" onAction="#onButtonEnde" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" text="Ende" textFill="#464646">
+                     <font>
+                        <Font name="Corbel Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="439.0" layoutY="214.0" mnemonicParsing="false" onAction="#onButtonZurRegistrierung" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: darkgrey;" text="Registrierung" textFill="#464646">
                      <font>
                         <Font name="Corbel Bold" size="16.0" />
                      </font>

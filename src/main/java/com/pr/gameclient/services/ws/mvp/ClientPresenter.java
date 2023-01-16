@@ -2,7 +2,6 @@ package com.pr.gameclient.services.ws.mvp;
 
 import com.pr.gameclient.services.ws.client.ClientEndpoint;
 import com.pr.gameclient.services.ws.common.msginteraction.UserInfoHelper;
-import com.pr.gameclient.services.ws.common.msginteraction.message.LoginIndicatorMsg;
 import javafx.application.Platform;
 
 public class ClientPresenter {
@@ -25,14 +24,6 @@ public class ClientPresenter {
         return clientEndpoint.getLogin();
     }
 
-    public void checkLogIn(LoginIndicatorMsg indicator) {
-        if (indicator.isLogin()) {
-            Platform.runLater(successLoginAction::action);
-        } else {
-            Platform.runLater(viewController::badLogIn);
-        }
-    }
-
     public void refreshVisualizationUserInfo() {
         if(mainViewController!=null) {
             Platform.runLater(() -> mainViewController.refreshData(UserInfoHelper.getInstance().getUserInfoList()));
@@ -44,16 +35,6 @@ public class ClientPresenter {
     public void sendToServer(Object object) {
         clientEndpoint.sendObject(object);
     }
-
-
-
-
-
-
-
-
-
-
 
     public void setViewController(ClientStartViewController viewController) {
         this.viewController = viewController;

@@ -20,7 +20,6 @@ import com.pr.gameclient.services.ws.common.msginteraction.message.RollTheDice;
 import java.net.URL;
 import java.util.Collection;
 import java.util.ResourceBundle;
-import java.util.stream.Collectors;
 
 /**
  * FXML controller for the application.

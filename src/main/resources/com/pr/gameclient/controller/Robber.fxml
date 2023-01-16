@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pr.gameclient.controller.MenuController">
+<AnchorPane style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pr.gameclient.controller.MenuController">
    <children>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: darkgrey;">
          <children>
@@ -28,9 +28,9 @@
                   <Image url="@../../Grafiken/Equipment/Herz.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="50.0" fitWidth="32.0" layoutX="426.0" layoutY="292.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="38.0" fitWidth="32.0" layoutX="426.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Grafiken/Equipment/Handschellen.png" />
+                  <Image url="@../../Grafiken/Equipment/Geldsack.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="423.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
@@ -38,14 +38,14 @@
                   <Image url="@../../Grafiken/Equipment/Waffe.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="30.0" fitWidth="32.0" layoutX="427.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="30.0" fitWidth="32.0" layoutX="427.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Grafiken/Equipment/Elektroschocker.png" />
+                  <Image url="@../../Grafiken/Equipment/Schraubenzieher.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="423.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="38.0" fitWidth="50.0" layoutX="414.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true" rotate="-30.0">
                <image>
-                  <Image url="@../../Grafiken/Equipment/Schlagstock.png" />
+                  <Image url="@../../Grafiken/Equipment/Brechstange.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="15.0" fitWidth="120.0" layoutX="466.0" layoutY="300.0">

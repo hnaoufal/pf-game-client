@@ -94,10 +94,10 @@ public class MoveController {
     // Verhindert, dass sich die Spieler außerhalb der gesetzten Grenzen bewegen
     private void borderOfDeck() {
 
-        double leftBound = 100;
-        double rightBound = scene.getHeight() + 80;
-        double bottomBound = scene.getWidth() - 383; // Eigentlich Scrollpane, daher u.a. hier nacharbeiten !!!
-        double topBound = 100;
+        double leftBound = 95;
+        double rightBound = scene.getHeight() + 75;
+        double bottomBound = scene.getWidth() - 391; // Eigentlich Scrollpane, daher u.a. hier nacharbeiten !!!
+        double topBound = 101;
 
         if(sprite.getLayoutX() <= leftBound){
             sprite.setLayoutX(leftBound);

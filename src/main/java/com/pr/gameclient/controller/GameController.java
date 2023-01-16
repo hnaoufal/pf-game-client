@@ -19,7 +19,6 @@ import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -57,13 +56,13 @@ public class GameController implements Initializable {
     }
 
     // Kollisionserkennung mithilfe der integrierten JavaFX-Funktion .intersects
-    public void collision(ImageView policeman, ImageView collisionBank, ImageView collisionMuseum, ImageView collisionJeweler){
+    public void collision(ImageView policeman, ImageView collisionBank, ImageView collisionJeweler, ImageView collisionMuseum){
         if (policeman.getBoundsInParent().intersects(collisionBank.getBoundsInParent())){
             System.out.println("Kollision mit Bank");
-        } else if (policeman.getBoundsInParent().intersects(collisionMuseum.getBoundsInParent())){
-            System.out.println("Kollision mit Museum");
         } else if (policeman.getBoundsInParent().intersects(collisionJeweler.getBoundsInParent())){
             System.out.println("Kollision mit Juweliergeschaeft");
+        } else if (policeman.getBoundsInParent().intersects(collisionMuseum.getBoundsInParent())){
+            System.out.println("Kollision mit Museum");
         }
     }
 
@@ -85,8 +84,8 @@ public class GameController implements Initializable {
     @FXML
     public void onButtonReset(ActionEvent event) throws IOException {
 
-        robber.setLayoutX(110);
-        robber.setLayoutY(215);
+        robber.setLayoutX(105);
+        robber.setLayoutY(210);
         //scoreCounter = 0;
         //score.setText(String.valueOf(scoreCounter));
     }

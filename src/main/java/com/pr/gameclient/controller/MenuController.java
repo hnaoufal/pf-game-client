@@ -13,7 +13,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.util.Objects;
 
 public class MenuController {
 
@@ -72,7 +71,7 @@ public class MenuController {
     // Login und zur Seite "Settings" springen
     @FXML
     public void onButtonLogin(ActionEvent event) throws IOException {
-        try{
+        /*try{
             LoginController LoginControl = new LoginController();
             LoginControl.LoginAction(loginUser.getText(), loginPassword.getText());
         }
@@ -82,7 +81,7 @@ public class MenuController {
                 addLabel("Der angegebene Account existiert nicht!", Color.RED, LoginPageVbox);
             }
             return;
-        }
+        }*/
 
         root = FXMLLoader.load(getClass().getResource("Settings.fxml"));
         sceneSwitcher = new Scene(root);

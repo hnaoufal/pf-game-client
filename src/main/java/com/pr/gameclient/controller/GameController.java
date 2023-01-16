@@ -109,18 +109,18 @@ public class GameController implements Initializable {
 
             TranslateTransition tt = new TranslateTransition(Duration.millis(500), n);
 
-            //Wenn wir die gehoverte Karte erreichen, wird sie nach obenlinks herausgestellt und der Loop endet
+            //Wenn wir die gehoverte Karte erreichen, wird sie nach oben links herausgestellt und der Loop endet
             if (n == hoveredCard) {
-                tt.setToY(-140);
-                tt.setToX(count*(-50) - 75);
+                tt.setToY(-50);
+                tt.setToX(count*(-25) - 50);
                 tt.play();
                 break;
             }
 
             //Alle Karten links von der gehoverten werden weiter nach links gerückt, damit sie sichtbar bleiben
-            tt.setToX(count*(-50) - 75);
+            /*tt.setToX(count*(-25) - 50);
             tt.play();
-            count++;
+            count++;*/
         }
     }
 
@@ -142,7 +142,7 @@ public class GameController implements Initializable {
         for (Node n : hoveredCard.getParent().getChildrenUnmodifiable()) {
 
             TranslateTransition tt = new TranslateTransition(Duration.millis(500), n);
-            tt.setToX(count*(-50)); // Das -50 ist, damit sich die Karten leicht überlappen
+            tt.setToX(count*(-10)); // Das -10 ist, damit sich die Karten leicht überlappen
             tt.setToY(0); // Das holt die gehoverte Karte wieder runter zu den anderen
             tt.play();
 

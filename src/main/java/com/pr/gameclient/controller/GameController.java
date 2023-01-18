@@ -110,7 +110,7 @@ public class GameController implements Initializable {
 
         robber.setLayoutX(105);
         robber.setLayoutY(210);
-        //scoreCounter = 0;
+        scoreCounter.setText("0");
         //score.setText(String.valueOf(scoreCounter));
     }
 

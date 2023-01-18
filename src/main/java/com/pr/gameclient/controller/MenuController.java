@@ -173,7 +173,7 @@ public class MenuController {
     // Button "Start" um Spiel zu starten
     @FXML
     public void onButtonStart(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("PoliceGame.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("RobberGame.fxml"));
         root = loader.load();
         GameController controller = loader.getController();
 

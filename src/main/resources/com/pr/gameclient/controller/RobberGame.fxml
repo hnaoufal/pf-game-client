@@ -1,73 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.ScrollPane?>
+
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Circle?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pr.gameclient.controller.GameController">
+<AnchorPane fx:id="scene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pr.gameclient.controller.GameController">
    <children>
-      <ScrollPane hbarPolicy="NEVER" layoutX="-15.0" layoutY="-4.0" pannable="true" prefHeight="795.0" prefWidth="1059.0" vbarPolicy="NEVER" AnchorPane.bottomAnchor="-23.0" AnchorPane.leftAnchor="-15.0" AnchorPane.rightAnchor="-20.0" AnchorPane.topAnchor="-4.0">
-         <content>
-            <ImageView fitHeight="2000.0" fitWidth="1500.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Grafiken/Equipment/Background.png" />
-               </image>
-            </ImageView>
-         </content>
-      </ScrollPane>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="225.0">
+      <ImageView fitHeight="909.0" fitWidth="1200.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Grafiken/Equipment/Background_1.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="350.0" layoutY="14.0" prefHeight="100.0" prefWidth="500.0">
          <children>
-            <ImageView>
-               <image>
-                  <Image url="@../../Grafiken/RobberPics/Blood.png" />
-               </image>
-            </ImageView>
-            <ImageView>
-               <image>
-                  <Image url="@../../Grafiken/RobberPics/Ivan.png" />
-               </image>
-            </ImageView>
-            <ImageView>
-               <image>
-                  <Image url="@../../Grafiken/RobberPics/Raven.png" />
-               </image>
-            </ImageView>
-            <ImageView>
-               <image>
-                  <Image url="@../../Grafiken/RobberPics/Red.png" />
-               </image>
-            </ImageView>
-            <ImageView>
-               <image>
-                  <Image url="@../../Grafiken/RobberPics/Trevor.png" />
-               </image>
-            </ImageView>
+            <HBox>
+               <children>
+                  <ImageView fx:id="robber1" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#selectCharacter" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Grafiken/RobberPics/Robber_1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="robber2" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#selectCharacter" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Grafiken/RobberPics/Robber_2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="robber3" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#selectCharacter" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Grafiken/RobberPics/Robber_3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="robber4" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#selectCharacter" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Grafiken/RobberPics/Robber_4.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="robber5" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#selectCharacter" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Grafiken/RobberPics/Robber_5.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <Circle fx:id="CharacterSelectionCircle" fill="#1f93ff00" layoutX="50.0" layoutY="50.0" radius="50.0" stroke="RED" strokeType="INSIDE" strokeWidth="5.0" />
          </children>
-      </HBox>
-      <HBox alignment="CENTER" layoutX="225.0" layoutY="638.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="225.0" AnchorPane.topAnchor="638.0">
-         <children>
-            <ImageView fitHeight="200.0" fitWidth="144.0" onMouseEntered="#zoomCard" onMouseExited="#unZoomCard">
-               <image>
-                  <Image url="@../../Grafiken/Cards/PlaceholderCard.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="200.0" fitWidth="144.0" onMouseEntered="#zoomCard" onMouseExited="#unZoomCard" translateX="-50.0">
-               <image>
-                  <Image url="@../../Grafiken/Cards/PlaceholderCard.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="200.0" fitWidth="144.0" onMouseEntered="#zoomCard" onMouseExited="#unZoomCard" translateX="-100.0">
-               <image>
-                  <Image url="@../../Grafiken/Cards/PlaceholderCard.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="200.0" fitWidth="144.0" onMouseEntered="#zoomCard" onMouseExited="#unZoomCard" translateX="-150.0">
-               <image>
-                  <Image url="@../../Grafiken/Cards/PlaceholderCard.png" />
-               </image>
-            </ImageView>
-         </children>
-      </HBox>
+      </AnchorPane>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="117.0" layoutY="226.0" onMouseClicked="#moveCharacter" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Grafiken/Buildings/Store.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="750.0" layoutY="575.0" onMouseClicked="#moveCharacter" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Grafiken/Buildings/Jewelry.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="160.0" layoutY="655.0" onMouseClicked="#moveCharacter" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Grafiken/Buildings/PoliceHQ.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="1028.0" layoutY="687.0" onMouseClicked="#moveCharacter" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Grafiken/Buildings/Prison.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="507.0" layoutY="493.0" onMouseClicked="#moveCharacter" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Grafiken/Buildings/Museum.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="378.0" layoutY="244.0" onMouseClicked="#moveCharacter" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Grafiken/Buildings/bank%20(1).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="1006.0" layoutY="114.0" onMouseClicked="#moveCharacter" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Grafiken/Buildings/Restaurante.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="996.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Grafiken/Buildings/Store.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="928.0" layoutY="344.0" onMouseClicked="#moveCharacter" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Grafiken/Buildings/Coffeeshop.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="147.0" layoutX="726.0" layoutY="164.0" onMouseClicked="#moveCharacter" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Grafiken/Buildings/Boutique.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="robber1Icon" fitHeight="50.0" fitWidth="50.0" layoutX="1003.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Grafiken/RobberPics/Robber_1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="robber2Icon" fitHeight="50.0" fitWidth="50.0" layoutX="1071.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Grafiken/RobberPics/Robber_2.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

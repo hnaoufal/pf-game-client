@@ -1,5 +1,7 @@
 package com.pr.gameclient.models.persons;
 
+import javafx.scene.image.ImageView;
+
 public class Policeman extends Person {
     Integer speed;
 
@@ -9,7 +11,7 @@ public class Policeman extends Person {
     }
 
     @Override
-    void move() {
+    public void move(ImageView target) {
 
         System.out.println("hallo");
     }

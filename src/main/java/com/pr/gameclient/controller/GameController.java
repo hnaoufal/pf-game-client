@@ -1,5 +1,9 @@
 package com.pr.gameclient.controller;
 
+import com.pr.gameclient.models.assets.Point;
+import com.pr.gameclient.models.persons.Robber;
+import com.pr.gameclient.models.places.Place;
+import com.pr.gameclient.models.places.Supermarket;
 import com.pr.gameclient.services.ws.common.msginteraction.message.ChatMessage;
 import com.pr.gameclient.services.ws.mvp.ClientPresenter;
 import javafx.animation.AnimationTimer;
@@ -12,15 +16,20 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class GameController implements Initializable {
@@ -40,6 +49,23 @@ public class GameController implements Initializable {
     @FXML
     private TextArea chat;
 
+    @FXML
+    private ImageView robber1, robber1Icon;
+    @FXML
+    private ImageView robber2, robber2Icon;
+    @FXML
+    private ImageView robber3;
+    @FXML
+    private ImageView robber4;
+    @FXML
+    private ImageView robber5;
+    @FXML
+    private Circle CharacterSelectionCircle;
+
+    private Robber selectedCharacter;
+
+    private List<Robber> robberList = new ArrayList<>();
+
     private final MoveController moveController = new MoveController();
 
     AnimationTimer collisionTimer = new AnimationTimer() {
@@ -51,8 +77,34 @@ public class GameController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        moveController.move(scene, robber);
-        collisionTimer.start();
+        generateCharacters();
+        //moveController.move(scene, robber);
+        //collisionTimer.start();
+    }
+    @FXML
+    public void selectCharacter(MouseEvent event){
+        ImageView target = (ImageView) event.getTarget();
+        CharacterSelectionCircle.setCenterX(target.getLayoutX());
+        for(int i = 0; i<robberList.size(); i++){
+            if(robberList.get(i).getPortrait() == target){
+                selectedCharacter = robberList.get(i);
+            }
+        }
+    }
+
+    @FXML
+    public void moveCharacter(MouseEvent event){
+        ImageView target = (ImageView) event.getTarget();
+        selectedCharacter.move(target);
+
+    }
+
+    private void generateCharacters(){
+        Robber robber01 = new Robber("robber1", "test", robber1, robber1Icon, 3, 5);
+        selectedCharacter = robber01;
+        robberList.add(robber01);
+        Robber robber02 = new Robber("robber2", "test", robber2, robber2Icon, 3, 5);
+        robberList.add(robber02);
     }
 
     // Kollisionserkennung mithilfe der integrierten JavaFX-Funktion .intersects
@@ -65,6 +117,8 @@ public class GameController implements Initializable {
             System.out.println("Kollision mit Museum");
         }
     }
+
+
 
     // Button "Zurück" zu den Settings
     @FXML

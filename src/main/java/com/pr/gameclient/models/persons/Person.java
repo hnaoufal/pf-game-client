@@ -2,6 +2,7 @@ package com.pr.gameclient.models.persons;
 
 import com.pr.gameclient.models.assets.AssetEntity;
 import com.pr.gameclient.models.assets.Point;
+import javafx.scene.image.ImageView;
 
 public abstract class Person implements AssetEntity {
     String assetSrc;
@@ -16,5 +17,5 @@ public abstract class Person implements AssetEntity {
         this.position = new Point(0, 0);
     }
 
-    abstract void move();
+    abstract public void move(ImageView target);
 }

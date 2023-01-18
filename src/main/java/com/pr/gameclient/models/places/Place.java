@@ -22,4 +22,12 @@ public abstract class Place implements AssetEntity {
         this.assetSrc = assetSrc;
         this.position = position;
     }
+
+    public void setPosition(Point position) {
+        this.position = position;
+    }
+
+    public Point getPosition() {
+        return position;
+    }
 }

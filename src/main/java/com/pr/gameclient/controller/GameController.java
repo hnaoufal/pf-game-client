@@ -1,5 +1,10 @@
 package com.pr.gameclient.controller;
 
+import com.pr.gameclient.models.assets.Point;
+import com.pr.gameclient.models.places.Bank;
+import com.pr.gameclient.models.places.Jeweler;
+import com.pr.gameclient.models.places.Museum;
+import com.pr.gameclient.models.places.Place;
 import com.pr.gameclient.services.ws.common.msginteraction.message.ChatMessage;
 import com.pr.gameclient.services.ws.mvp.ClientPresenter;
 import javafx.animation.AnimationTimer;
@@ -11,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -30,27 +36,34 @@ public class GameController implements Initializable {
     @FXML
     private ImageView robber;
     @FXML
-    private ImageView bank;
+    private ImageView bankIcon;
     @FXML
-    private ImageView jeweler;
+    private ImageView jewelerIcon;
     @FXML
-    private ImageView museum;
+    private ImageView museumIcon;
     @FXML
     private Button chatButton;
     @FXML
     private TextArea chat;
+    @FXML
+    private Label scoreCounter;
+    Bank bank = new Bank("assetSrc", new Point(0,0));
+    Museum museum = new Museum("assetSrc", new Point(0,0));
+    Jeweler jeweler = new Jeweler("assetSrc", new Point(0,0));
+    int payCounter = 0;
 
     private final MoveController moveController = new MoveController();
 
     AnimationTimer collisionTimer = new AnimationTimer() {
         public void handle(long timestamp) {
 
-            collision(robber, bank, jeweler, museum);
+            collision(robber, bankIcon, jewelerIcon, museumIcon);
         }
     };
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        initializePlaces();
         moveController.move(scene, robber);
         collisionTimer.start();
     }
@@ -59,10 +72,13 @@ public class GameController implements Initializable {
     public void collision(ImageView policeman, ImageView collisionBank, ImageView collisionJeweler, ImageView collisionMuseum){
         if (policeman.getBoundsInParent().intersects(collisionBank.getBoundsInParent())){
             System.out.println("Kollision mit Bank");
+            increaseScore(bank);
         } else if (policeman.getBoundsInParent().intersects(collisionJeweler.getBoundsInParent())){
             System.out.println("Kollision mit Juweliergeschaeft");
+            increaseScore(jeweler);
         } else if (policeman.getBoundsInParent().intersects(collisionMuseum.getBoundsInParent())){
             System.out.println("Kollision mit Museum");
+            increaseScore(museum);
         }
     }
 
@@ -158,5 +174,24 @@ public class GameController implements Initializable {
     @FXML
     public void updateChat(String text) {
         chat.appendText(text);
+    }
+
+    public void initializePlaces(){
+        bank.setIcon(bankIcon);
+        museum.setIcon(museumIcon);
+        jeweler.setIcon(jewelerIcon);
+    }
+
+    public void increaseScore(Place place){
+        if(payCounter == 10){
+            payCounter = 0;
+            int currentScore = Integer.parseInt(scoreCounter.getText());
+            currentScore += place.getMoneyValue();
+            String currentScoreString = Integer.toString(currentScore);
+            scoreCounter.setText(currentScoreString);
+        }else{
+            payCounter++;
+        }
+
     }
 }

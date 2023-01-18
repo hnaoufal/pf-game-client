@@ -2,6 +2,7 @@ package com.pr.gameclient.models.places;
 
 import com.pr.gameclient.models.assets.AssetEntity;
 import com.pr.gameclient.models.assets.Point;
+import javafx.scene.image.ImageView;
 
 public abstract class Place implements AssetEntity {
 
@@ -17,9 +18,23 @@ public abstract class Place implements AssetEntity {
     //Wie wahrscheinlich ist, das Alarm ausgelöst wird 1-10, 1 = unwahrscheinlich, 10 = sehr wahrscheinlich
     Integer securityRating;
 
+    ImageView icon;
+
     //Constructor
     Place(String assetSrc, Point position){
         this.assetSrc = assetSrc;
         this.position = position;
+    }
+
+    public void setPosition(Point position) {
+        this.position = position;
+    }
+
+    public void setIcon(ImageView icon) {
+        this.icon = icon;
+    }
+
+    public Integer getMoneyValue() {
+        return moneyValue;
     }
 }

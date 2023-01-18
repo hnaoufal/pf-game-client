@@ -23,6 +23,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.io.IOException;
@@ -36,6 +37,8 @@ public class GameController implements Initializable {
     @FXML
     private ImageView robber;
     @FXML
+    private ImageView policeman;
+    @FXML
     private ImageView bankIcon;
     @FXML
     private ImageView jewelerIcon;
@@ -44,6 +47,8 @@ public class GameController implements Initializable {
     @FXML
     private Button chatButton;
     @FXML
+    private HBox robberIconPanel;
+    @FXML
     private TextArea chat;
     @FXML
     private Label scoreCounter;
@@ -51,13 +56,14 @@ public class GameController implements Initializable {
     Museum museum = new Museum("assetSrc", new Point(0,0));
     Jeweler jeweler = new Jeweler("assetSrc", new Point(0,0));
     int payCounter = 0;
+    int imprisonedRobbers = 0;
 
     private final MoveController moveController = new MoveController();
 
     AnimationTimer collisionTimer = new AnimationTimer() {
         public void handle(long timestamp) {
 
-            collision(robber, bankIcon, jewelerIcon, museumIcon);
+            collision(robber, policeman, bankIcon, jewelerIcon, museumIcon);
         }
     };
 
@@ -69,16 +75,18 @@ public class GameController implements Initializable {
     }
 
     // Kollisionserkennung mithilfe der integrierten JavaFX-Funktion .intersects
-    public void collision(ImageView policeman, ImageView collisionBank, ImageView collisionJeweler, ImageView collisionMuseum){
-        if (policeman.getBoundsInParent().intersects(collisionBank.getBoundsInParent())){
+    public void collision(ImageView robber, ImageView policeman, ImageView collisionBank, ImageView collisionJeweler, ImageView collisionMuseum){
+        if (robber.getBoundsInParent().intersects(collisionBank.getBoundsInParent())){
             System.out.println("Kollision mit Bank");
             increaseScore(bank);
-        } else if (policeman.getBoundsInParent().intersects(collisionJeweler.getBoundsInParent())){
+        } else if (robber.getBoundsInParent().intersects(collisionJeweler.getBoundsInParent())){
             System.out.println("Kollision mit Juweliergeschaeft");
             increaseScore(jeweler);
-        } else if (policeman.getBoundsInParent().intersects(collisionMuseum.getBoundsInParent())){
+        } else if (robber.getBoundsInParent().intersects(collisionMuseum.getBoundsInParent())){
             System.out.println("Kollision mit Museum");
             increaseScore(museum);
+        } else if (robber.getBoundsInParent().intersects(policeman.getBoundsInParent())){
+            imprisonRobber();
         }
     }
 
@@ -189,9 +197,31 @@ public class GameController implements Initializable {
             currentScore += place.getMoneyValue();
             String currentScoreString = Integer.toString(currentScore);
             scoreCounter.setText(currentScoreString);
-        }else{
+        }else {
             payCounter++;
         }
 
+    }
+
+    public void imprisonRobber(){
+        robber.relocate(100, 200);
+        Node imprisonedPortrait = robberIconPanel.getChildren().get(imprisonedRobbers);
+        imprisonedPortrait.setOpacity(0.2);
+        imprisonedRobbers++;
+        if(imprisonedRobbers == 5){
+            System.out.println("Spiel zuende!");
+            try{
+                Parent root;
+                Scene sceneSwitcher;
+                root = FXMLLoader.load(getClass().getResource("Settings.fxml"));
+                sceneSwitcher = new Scene(root);
+                Stage stage = (Stage)  imprisonedPortrait.getScene().getWindow();
+                stage.setScene(sceneSwitcher);
+                stage.show();
+            }catch(Exception e){
+                System.out.println(e.getMessage());
+            }
+
+        }
     }
 }

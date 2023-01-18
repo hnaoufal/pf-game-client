@@ -96,7 +96,7 @@ public class MoveController {
 
         double leftBound = 95;
         double rightBound = scene.getHeight() + 75;
-        double bottomBound = scene.getWidth() - 391; // Eigentlich Scrollpane, daher u.a. hier nacharbeiten !!!
+        double bottomBound = scene.getWidth() - 391;
         double topBound = 101;
 
         if(sprite.getLayoutX() <= leftBound){

@@ -139,7 +139,7 @@
       </ImageView>
       <ImageView fx:id="robber" fitHeight="60.0" fitWidth="60.0" layoutX="98.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../../../../Downloads/burglar%20(1).png" />
+            <Image url="@../../Grafiken/RobberPics/Robber.png" />
          </image>
       </ImageView>
       <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#onButtonReset" prefHeight="27.0" prefWidth="120.0" style="-fx-background-color: grey;" text="Reset" textFill="WHITE">

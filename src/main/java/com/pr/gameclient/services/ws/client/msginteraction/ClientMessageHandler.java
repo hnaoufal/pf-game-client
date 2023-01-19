@@ -17,5 +17,6 @@ public class ClientMessageHandler<Y extends MessageHandler> extends AllMessageHa
         handleMap.put(FinishGame.class.getSimpleName(), new FinishGameHandler());
         handleMap.put(StartGame.class.getSimpleName(), new StartGameHandler());
         handleMap.put(ChatMessage.class.getSimpleName(), new ChatMessageHandler());
+        handleMap.put(MoveMessage.class.getSimpleName(), new MoveMessageHandler());
     }
 }

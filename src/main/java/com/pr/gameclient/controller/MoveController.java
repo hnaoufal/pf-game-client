@@ -1,6 +1,9 @@
 package com.pr.gameclient.controller;
 
+import com.pr.gameclient.services.ws.common.msginteraction.message.MoveMessage;
+import com.pr.gameclient.services.ws.mvp.ClientPresenter;
 import javafx.animation.AnimationTimer;
+import javafx.application.Platform;
 import javafx.beans.binding.BooleanBinding;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -24,22 +27,43 @@ public class MoveController {
 
     AnimationTimer animationTimer = new AnimationTimer() {
         public void handle(long timestamp) {
+        double x = sprite.getLayoutX();
+        double y = sprite.getLayoutY();
 
         if(w.get()) {
-            sprite.setLayoutY(sprite.getLayoutY() - speed);
+            y -= speed;
         }
         if(s.get()){
-            sprite.setLayoutY(sprite.getLayoutY() + speed);
+            y += speed;
         }
         if(a.get()){
-            sprite.setLayoutX(sprite.getLayoutX() - speed);
+            x -= speed;
         }
         if(d.get()){
-            sprite.setLayoutX(sprite.getLayoutX() + speed);
+            x += speed;
         }
+
+        sprite.setLayoutY(y);
+        sprite.setLayoutX(x);
+        ClientPresenter.getInstance().sendToServer(new MoveMessage(x, y));
         borderOfDeck();
         }
     };
+
+    // Split string by "/" and get x and y as Double
+    // Set sprite layout x and y
+    public void movePlayer(String moveMessage) {
+        Platform.runLater(() -> {
+            String[] parts = moveMessage.split("/");
+            double x = Double.parseDouble(parts[0]);
+
+            double y = Double.parseDouble(parts[1]);
+            sprite.setLayoutX(x);
+            sprite.setLayoutY(y);
+        });
+    }
+
+
 
     public void move(AnchorPane scene, ImageView sprite){
 

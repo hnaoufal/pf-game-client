@@ -58,7 +58,7 @@ public class GameController implements Initializable {
     int payCounter = 0;
     int imprisonedRobbers = 0;
 
-    private final MoveController moveController = new MoveController();
+    public final MoveController moveController = new MoveController();
 
     AnimationTimer collisionTimer = new AnimationTimer() {
         public void handle(long timestamp) {
@@ -140,11 +140,6 @@ public class GameController implements Initializable {
                 tt.play();
                 break;
             }
-
-            //Alle Karten links von der gehoverten werden weiter nach links gerückt, damit sie sichtbar bleiben
-            /*tt.setToX(count*(-25) - 50);
-            tt.play();
-            count++;*/
         }
     }
 

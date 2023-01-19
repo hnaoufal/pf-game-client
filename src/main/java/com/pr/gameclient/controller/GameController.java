@@ -108,7 +108,7 @@ public class GameController implements Initializable {
     @FXML
     public void onButtonReset(ActionEvent event) throws IOException {
 
-        robber.setLayoutX(105);
+        robber.setLayoutX(100);
         robber.setLayoutY(210);
         scoreCounter.setText("0");
         //score.setText(String.valueOf(scoreCounter));

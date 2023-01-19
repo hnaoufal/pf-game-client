@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="scene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="990.0" style="-fx-background-color: darkgrey;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pr.gameclient.controller.GameController">
+<AnchorPane fx:id="scene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="990.0" style="-fx-background-color: darkgrey;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pr.gameclient.controller.GameController">
    <children>
       <BorderPane prefHeight="760.0" prefWidth="900.0">
          <center>
@@ -109,14 +109,14 @@
                         <Font name="Corbel Bold" size="18.0" />
                      </font>
                   </Text>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="34.0" prefWidth="96.0" text="Score:">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="96.0" text="Score:" textFill="WHITE">
                      <font>
-                        <Font size="22.0" />
+                        <Font name="Corbel Bold" size="22.0" />
                      </font>
                   </Label>
-                  <Label fx:id="scoreCounter" alignment="CENTER" prefHeight="37.0" prefWidth="105.0" text="0">
+                  <Label fx:id="scoreCounter" alignment="CENTER" prefHeight="25.0" prefWidth="105.0" text="0" textFill="WHITE">
                      <font>
-                        <Font size="18.0" />
+                        <Font name="Corbel Bold" size="22.0" />
                      </font>
                   </Label>
                </children>
@@ -148,7 +148,7 @@
             <Image url="@../../Grafiken/Buildings/Prison.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="robber" fitHeight="60.0" fitWidth="60.0" layoutX="100.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="robber" fitHeight="60.0" fitWidth="60.0" layoutX="100.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Grafiken/RobberPics/Robber.png" />
          </image>

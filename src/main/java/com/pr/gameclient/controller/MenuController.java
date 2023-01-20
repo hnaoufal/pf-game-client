@@ -209,8 +209,4 @@ public class MenuController {
         newLabel.setTextFill(color);
         container.getChildren().add(newLabel);
     }
-
-    public String getGameType(){
-        return gameType;
-    }
 }

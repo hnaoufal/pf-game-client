@@ -1,6 +1,7 @@
 package com.pr.gameclient.controller;
 
 import com.pr.gameclient.Context;
+import com.pr.gameclient.Player;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,8 +10,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import java.io.IOException;
 
@@ -28,7 +31,11 @@ public class MenuController {
     @FXML private TextField registerPassword;
     @FXML private TextField registerEmail;
     @FXML private TextField registerPasswordRepeat;
+    @FXML private Circle policeCircle;
+    @FXML private Circle robberCircle;
     @FXML VBox registerPageVbox;
+
+    public String gameType = "police";
 
     public void setStage(Stage stage) {
 
@@ -82,7 +89,6 @@ public class MenuController {
             }
             return;
         }*/
-
         root = FXMLLoader.load(getClass().getResource("Settings.fxml"));
         sceneSwitcher = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -124,22 +130,17 @@ public class MenuController {
     // Zu den Einstellungen des Officers
     @FXML
     public void onButtonOfficer(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("Policeman.fxml"));
-        sceneSwitcher = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(sceneSwitcher);
-        stage.show();
+        gameType = "police";
+        policeCircle.setOpacity(1);
+        robberCircle.setOpacity(0);
     }
 
     // Zu den Einstellungen des Robbers
     @FXML
     public void onButtonRobber(ActionEvent event) throws IOException {
-
-        root = FXMLLoader.load(getClass().getResource("Robber.fxml"));
-        sceneSwitcher = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(sceneSwitcher);
-        stage.show();
+        gameType = "robber";
+        policeCircle.setOpacity(0);
+        robberCircle.setOpacity(1);
     }
 
     // Button "Zurück" zu den Start
@@ -173,13 +174,20 @@ public class MenuController {
     // Button "Start" um Spiel zu starten
     @FXML
     public void onButtonStart(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("PoliceGame.fxml"));
+        FXMLLoader loader;
+        if(gameType.equals("robber")){
+            loader = new FXMLLoader(getClass().getResource("PoliceGame.fxml"));
+        }
+        else {
+            loader = new FXMLLoader(getClass().getResource("PoliceGamePoliceView.fxml"));
+        }
         root = loader.load();
         GameController controller = loader.getController();
 
         Context context = Context.getInstance();
         context.setLoader(loader);
         context.setGameController(controller);
+        controller.initMovement(gameType.equals("robber") ? "robber" : "police");
         sceneSwitcher = new Scene(root);
         sceneSwitcher.getRoot().requestFocus();
 
@@ -200,5 +208,9 @@ public class MenuController {
         Label newLabel = new Label(text);
         newLabel.setTextFill(color);
         container.getChildren().add(newLabel);
+    }
+
+    public String getGameType(){
+        return gameType;
     }
 }

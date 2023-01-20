@@ -115,6 +115,13 @@ public class MoveController {
         });
     }
 
+    public void clearInputs(){
+        w.set(false);
+        a.set(false);
+        s.set(false);
+        d.set(false);
+    }
+
     // Verhindert, dass sich die Spieler außerhalb der gesetzten Grenzen bewegen
     private void borderOfDeck() {
 

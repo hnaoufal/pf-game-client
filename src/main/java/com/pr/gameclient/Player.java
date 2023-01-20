@@ -4,6 +4,8 @@ import java.util.Vector;
 
 public class Player {
     String name;
+
+    String type;
     private int games;
     private int wins;
     private int defeats;
@@ -11,10 +13,9 @@ public class Player {
     private Vector handCards;
     private Vector deckCards;
 
-    public Player(String playerPoliceman, String playerRobber, int playerScore)
+    public Player(String name, int playerScore)
     {
-        this.name = playerPoliceman;
-        this.name = playerRobber;
+        this.name = name;
 
         this.score = playerScore;
         handCards = new Vector();
@@ -50,5 +51,12 @@ public class Player {
 
     public void commandName(String name) {
         this.name = name;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+    public String getType(){
+        return type;
     }
 }

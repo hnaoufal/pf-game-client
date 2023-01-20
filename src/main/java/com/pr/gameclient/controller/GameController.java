@@ -52,6 +52,7 @@ public class GameController implements Initializable {
     private TextArea chat;
     @FXML
     private Label scoreCounter;
+    private String gameType = "police";
     Bank bank = new Bank("assetSrc", new Point(0,0));
     Museum museum = new Museum("assetSrc", new Point(0,0));
     Jeweler jeweler = new Jeweler("assetSrc", new Point(0,0));
@@ -70,8 +71,16 @@ public class GameController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializePlaces();
-        moveController.move(scene, robber);
         collisionTimer.start();
+    }
+
+    void initMovement(String gameType){
+        if(gameType.equals("robber")){
+            moveController.move(scene, robber);
+        }
+        else{
+            moveController.move(scene, policeman);
+        }
     }
 
     // Kollisionserkennung mithilfe der integrierten JavaFX-Funktion .intersects
@@ -200,15 +209,23 @@ public class GameController implements Initializable {
 
     public void imprisonRobber(){
         robber.relocate(100, 200);
+        if(robber.getBoundsInParent().intersects(policeman.getBoundsInParent())) {
+            robber.relocate(scene.getWidth() - 391, 200);
+        }
+        if(imprisonedRobbers > 5){
+            imprisonedRobbers = 5;
+        }
         Node imprisonedPortrait = robberIconPanel.getChildren().get(imprisonedRobbers);
         imprisonedPortrait.setOpacity(0.2);
         imprisonedRobbers++;
         if(imprisonedRobbers == 5){
             System.out.println("Spiel zuende!");
+            robber.relocate(0,0);
+            moveController.clearInputs();
             try{
                 Parent root;
                 Scene sceneSwitcher;
-                root = FXMLLoader.load(getClass().getResource("Settings.fxml"));
+                root = FXMLLoader.load(getClass().getResource("GameOver.fxml"));
                 sceneSwitcher = new Scene(root);
                 Stage stage = (Stage)  imprisonedPortrait.getScene().getWindow();
                 stage.setScene(sceneSwitcher);
@@ -218,5 +235,8 @@ public class GameController implements Initializable {
             }
 
         }
+    }
+    public void setGameType(String type){
+        gameType = type;
     }
 }

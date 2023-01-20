@@ -236,7 +236,4 @@ public class GameController implements Initializable {
 
         }
     }
-    public void setGameType(String type){
-        gameType = type;
-    }
 }

@@ -35,6 +35,8 @@ public class MenuController {
     @FXML private Circle robberCircle;
     @FXML VBox registerPageVbox;
 
+    @FXML public Label scoreDisplay;
+
     public String gameType = "police";
 
     public void setStage(Stage stage) {

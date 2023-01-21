@@ -1,16 +1,13 @@
 package com.pr.gameclient.controller;
 
-import com.pr.gameclient.Context;
-import com.pr.gameclient.Player;
+import com.pr.gameclient.models.Player;
 import com.pr.gameclient.helpers.HTTPClient;
 import com.pr.gameclient.models.assets.Point;
-import com.pr.gameclient.models.game.HighScore;
 import com.pr.gameclient.models.places.Bank;
 import com.pr.gameclient.models.places.Jeweler;
 import com.pr.gameclient.models.places.Museum;
 import com.pr.gameclient.models.places.Place;
-import com.pr.gameclient.services.ws.common.msginteraction.message.ChatMessage;
-import com.pr.gameclient.services.ws.mvp.ClientPresenter;
+import com.pr.gameclient.services.ws.message.ChatMessage;
 import javafx.animation.AnimationTimer;
 import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
@@ -32,13 +29,8 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.http.HttpRequest;
 import java.util.ResourceBundle;
 
 public class GameController implements Initializable {

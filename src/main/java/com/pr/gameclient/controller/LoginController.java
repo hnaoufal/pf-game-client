@@ -1,6 +1,6 @@
 package com.pr.gameclient.controller;
 
-import com.pr.gameclient.Player;
+import com.pr.gameclient.models.Player;
 import com.pr.gameclient.helpers.HTTPClient;
 
 import java.io.BufferedReader;
@@ -8,7 +8,6 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.http.HttpResponse;
 
 public class LoginController {
 

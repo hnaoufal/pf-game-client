@@ -1,7 +1,6 @@
 package com.pr.gameclient.controller;
 
-import com.pr.gameclient.services.ws.common.msginteraction.message.MoveMessage;
-import com.pr.gameclient.services.ws.mvp.ClientPresenter;
+import com.pr.gameclient.services.ws.message.MoveMessage;
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
 import javafx.beans.binding.BooleanBinding;

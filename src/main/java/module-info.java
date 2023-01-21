@@ -15,13 +15,15 @@ module com.pr.gameclient {
     opens com.pr.gameclient to javafx.fxml, org.glassfish.tyrus.client, com.google.gson;
     exports com.pr.gameclient;
     exports com.pr.gameclient.controller;
-    exports com.pr.gameclient.services.ws.client;
-    exports com.pr.gameclient.services.ws.common;
-    opens com.pr.gameclient.services.ws.common.msginteraction.message to com.google.gson;
-    opens com.pr.gameclient.services.ws.common.msginteraction to com.google.gson;
-    opens com.pr.gameclient.services.ws.common to com.google.gson;
+    exports com.pr.gameclient.services.ws;
+    opens com.pr.gameclient.services.ws.message to com.google.gson;
     opens com.pr.gameclient.controller to javafx.fxml;
     exports com.pr.gameclient.models.game;
     exports com.pr.gameclient.models.user;
     opens com.pr.gameclient.models.game to javafx.fxml;
+    exports com.pr.gameclient.helpers;
+    opens com.pr.gameclient.helpers to com.google.gson;
+    opens com.pr.gameclient.models.user to com.google.gson;
+    exports com.pr.gameclient.models;
+    opens com.pr.gameclient.models to com.google.gson, javafx.fxml, org.glassfish.tyrus.client;
 }

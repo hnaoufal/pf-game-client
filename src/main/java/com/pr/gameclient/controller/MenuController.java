@@ -1,7 +1,7 @@
 package com.pr.gameclient.controller;
 
-import com.pr.gameclient.Context;
-import com.pr.gameclient.Player;
+import com.pr.gameclient.models.Context;
+import com.pr.gameclient.models.Player;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +10,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;

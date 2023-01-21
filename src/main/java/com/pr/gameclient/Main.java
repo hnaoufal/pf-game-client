@@ -1,7 +1,8 @@
 package com.pr.gameclient;
 
 import com.pr.gameclient.controller.MenuController;
-import com.pr.gameclient.services.ws.client.ClientService;
+import com.pr.gameclient.models.Context;
+import com.pr.gameclient.services.ws.ClientService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

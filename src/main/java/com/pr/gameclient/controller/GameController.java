@@ -21,6 +21,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.fxml.FXML;
@@ -58,6 +59,8 @@ public class GameController implements Initializable {
     private HBox robberIconPanel;
     @FXML
     private TextArea chat;
+    @FXML
+    private TextField chatInput;
     @FXML
     private Label scoreCounter;
     private String gameType = "police";
@@ -192,12 +195,14 @@ public class GameController implements Initializable {
 
     @FXML
     public void onChatSend() {
-        ClientPresenter.getInstance().sendToServer(new ChatMessage(chat.getText()));
+        String message = chatInput.getText();
+        chat.appendText("Me: " + message + "\n");
+        ClientPresenter.getInstance().sendToServer(new ChatMessage(message));
     }
 
     @FXML
     public void updateChat(String text) {
-        chat.appendText(text);
+        chat.appendText("Opponent: " + text + "\n");
     }
 
     public void initializePlaces(){

@@ -5,8 +5,6 @@ j
 :src/main/java/com/pr/gameclient/models/persons/Person.java,9/f/9f548eef2abe0106a1f6da9be7eafe78f5fae3af
 r
 Bsrc/main/java/com/pr/gameclient/services/ws/common/StaticData.java,4/7/47ab9151877e7f6f6747111cf11b5e2b9c9ce167
-ë
-asrc/main/java/com/pr/gameclient/services/ws/client/msginteraction/handler/ChatMessageHandler.java,a/5/a5b900e6c05742599b76f58b25e4c9bb41531523
 u
 Esrc/main/java/com/pr/gameclient/services/ws/client/ClientService.java,7/8/782a67fe221fec36a29edd84a5d0a9646b9f3ed9
 ê

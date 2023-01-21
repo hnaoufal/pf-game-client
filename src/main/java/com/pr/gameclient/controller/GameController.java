@@ -1,6 +1,7 @@
 package com.pr.gameclient.controller;
 
 import com.pr.gameclient.Context;
+import com.pr.gameclient.Player;
 import com.pr.gameclient.models.assets.Point;
 import com.pr.gameclient.models.game.HighScore;
 import com.pr.gameclient.models.places.Bank;
@@ -60,6 +61,7 @@ public class GameController implements Initializable {
     @FXML
     private Label scoreCounter;
     private String gameType = "police";
+    public Player activePlayer = new Player();
     Bank bank = new Bank("assetSrc", new Point(0,0));
     Museum museum = new Museum("assetSrc", new Point(0,0));
     Jeweler jeweler = new Jeweler("assetSrc", new Point(0,0));
@@ -204,9 +206,8 @@ public class GameController implements Initializable {
     public void increaseScore(Place place){
         if(payCounter == 10){
             payCounter = 0;
-            int currentScore = Integer.parseInt(scoreCounter.getText());
-            currentScore += place.getMoneyValue();
-            String currentScoreString = Integer.toString(currentScore);
+            activePlayer.setScore(activePlayer.getScore() + place.getMoneyValue());
+            String currentScoreString = Integer.toString(activePlayer.getScore());
             scoreCounter.setText(currentScoreString);
         }else {
             payCounter++;
@@ -261,7 +262,7 @@ public class GameController implements Initializable {
         // Send post request
         con.setDoOutput(true);
         DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-        wr.writeBytes(  "{\"user\": \"" + 8 + "\"," +
+        wr.writeBytes(  "{\"user\": \"" + activePlayer.getId() + "\"," +
                 "\"points\": \"" + scoreCounter.getText() + "\"}");
         wr.flush();
         wr.close();

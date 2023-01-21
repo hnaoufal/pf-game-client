@@ -8,6 +8,16 @@ public class Context {
     private volatile static Context INSTANCE;
     GameController gameController;
 
+    public Player getActivePlayer() {
+        return activePlayer;
+    }
+
+    public void setActivePlayer(Player activePlayer) {
+        this.activePlayer = activePlayer;
+    }
+
+    Player activePlayer;
+
     MenuController menuController;
     FXMLLoader loader;
     private Context() {}

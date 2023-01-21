@@ -1,0 +1,51 @@
+@startuml
+left to right direction
+
+class MoveController {
+    +moveCharacter(direction: Direction)
+    -character: Character
+    -gameView: GameView
+}
+
+class Character {
+    +move(direction: Direction)
+    +getX(): Double
+    +getY(): Double
+}
+
+class GameView {
+    +updateCharacterPosition(x: Double, y: Double)
+}
+
+interface Direction {
+    +getX(): Double
+    +getY(): Double
+}
+
+class UpDirection {
+    +getX(): Double
+    +getY(): Double
+}
+
+class DownDirection {
+    +getX(): Double
+    +getY(): Double
+}
+
+class LeftDirection {
+    +getX(): Double
+    +getY(): Double
+}
+
+class RightDirection {
+    +getX(): Double
+    +getY(): Double
+}
+
+Character --> MoveController
+MoveController --> GameView
+MoveController -> Direction
+Character -> Direction
+GameView --> MoveController
+
+@enduml

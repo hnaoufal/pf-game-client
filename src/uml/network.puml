@@ -1,0 +1,33 @@
+'Draw a network diagram with Rest and Websocket
+@startuml
+
+header Network Diagram
+
+actor Client
+actor Server
+
+== CRUD REST Synchron ==
+Client -> Server : HTTP Request (REST: /api/user)
+note right
+    REST Endpoints
+end note
+Server --> Client : HTTP Response (REST: /api/user)
+Client -> Server : HTTP Request (REST: /api/ranking)
+Server --> Client : HTTP Response (REST: /api/ranking)
+Client -> Server : HTTP Request (REST: /api/login)
+Server --> Client : HTTP Response (REST: /api/login)
+Client -> Server : HTTP Request (REST: /api/register)
+Server --> Client : HTTP Response (REST: /api/register)
+||45||
+== Websocket Asynchron ==
+Client <-> Server : WebSocket (real-time, bidirectional Chat and Game Control)
+note right
+    Websocket Endpoints
+end note
+||45||
+== Socket Asynchron ==
+Client <-> Server : Socket (real-time, bidirectional Chat and Game Control)
+note right
+    Socket Endpoints
+end note
+@enduml

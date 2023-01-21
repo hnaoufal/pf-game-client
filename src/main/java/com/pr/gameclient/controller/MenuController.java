@@ -35,6 +35,8 @@ public class MenuController {
     @FXML private Circle robberCircle;
     @FXML VBox registerPageVbox;
 
+    @FXML public Label scoreDisplay;
+
     public String gameType = "police";
 
     public void setStage(Stage stage) {
@@ -78,17 +80,20 @@ public class MenuController {
     // Login und zur Seite "Settings" springen
     @FXML
     public void onButtonLogin(ActionEvent event) throws IOException {
-        /*try{
+        Player loginPlayer;
+        try{
             LoginController LoginControl = new LoginController();
-            LoginControl.LoginAction(loginUser.getText(), loginPassword.getText());
+            loginPlayer = LoginControl.LoginAction(loginUser.getText(), loginPassword.getText());
         }
         catch(Exception e){
             System.out.println(e.toString());
-            if(LoginPageVbox.getChildren().size() == 1){ // Check, ob Label bereits von einem vorherigen Versuch da ist.
+            if(LoginPageVbox.getChildren() != null && LoginPageVbox.getChildren().size() == 1){ // Check, ob Label bereits von einem vorherigen Versuch da ist.
                 addLabel("Der angegebene Account existiert nicht!", Color.RED, LoginPageVbox);
             }
             return;
-        }*/
+        }
+        Context context = Context.getInstance();
+        context.setActivePlayer(loginPlayer);
         root = FXMLLoader.load(getClass().getResource("Settings.fxml"));
         sceneSwitcher = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -188,6 +193,7 @@ public class MenuController {
         context.setLoader(loader);
         context.setGameController(controller);
         controller.initMovement(gameType.equals("robber") ? "robber" : "police");
+        controller.activePlayer = context.getActivePlayer();
         sceneSwitcher = new Scene(root);
         sceneSwitcher.getRoot().requestFocus();
 

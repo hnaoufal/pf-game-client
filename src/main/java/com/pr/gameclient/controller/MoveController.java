@@ -16,8 +16,9 @@ public class MoveController {
 
     @FXML
     private AnchorPane scene;
-    @FXML
+
     private ImageView sprite;
+    private ImageView opponentSprite;
     private BooleanProperty w = new SimpleBooleanProperty();
     private BooleanProperty a = new SimpleBooleanProperty();
     private BooleanProperty s = new SimpleBooleanProperty();
@@ -58,17 +59,18 @@ public class MoveController {
             double x = Double.parseDouble(parts[0]);
 
             double y = Double.parseDouble(parts[1]);
-            sprite.setLayoutX(x);
-            sprite.setLayoutY(y);
+            opponentSprite.setLayoutX(x);
+            opponentSprite.setLayoutY(y);
         });
     }
 
 
 
-    public void move(AnchorPane scene, ImageView sprite){
+    public void move(AnchorPane scene, ImageView ownSprite, ImageView opponentSprite){
 
         this.scene = scene;
-        this.sprite = sprite;
+        this.sprite = ownSprite;
+        this.opponentSprite = opponentSprite;
 
         setup();
 

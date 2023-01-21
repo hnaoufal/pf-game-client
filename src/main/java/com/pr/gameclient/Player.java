@@ -10,14 +10,18 @@ public class Player {
     private int wins;
     private int defeats;
     int score;
+
+    long id;
     private Vector handCards;
     private Vector deckCards;
 
-    public Player(String name, int playerScore)
+    public Player(){}
+
+    public Player(String name, int playerScore, Long id)
     {
         this.name = name;
-
         this.score = playerScore;
+        this.id = id;
         handCards = new Vector();
         deckCards = new Vector();
     }
@@ -38,6 +42,11 @@ public class Player {
             score = wins / games * 100;
         }
         return score;
+    }
+    public void setScore(int scoreInput){score = scoreInput;}
+
+    public long getId(){
+        return id;
     }
 
     public void surrender() {

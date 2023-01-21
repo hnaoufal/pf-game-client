@@ -1,5 +1,7 @@
 package com.pr.gameclient.controller;
 
+import com.pr.gameclient.Player;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
@@ -8,7 +10,7 @@ import java.net.URL;
 
 public class LoginController {
 
-    public boolean LoginAction(String user, String password) throws Exception{
+    public Player LoginAction(String user, String password) throws Exception{
         String url = "http://localhost:8080/api/login";
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -28,6 +30,8 @@ public class LoginController {
         System.out.println("\nSending 'POST' request to URL : " + url);
         System.out.println("Response Code : " + responseCode);
 
+        if(responseCode != 200){throw new Exception();}
+
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(con.getInputStream()));
         String inputLine;
@@ -38,13 +42,18 @@ public class LoginController {
         }
         in.close();
 
+        String responseString = response.toString();
+        String filteredResponseString = responseString.substring(responseString.lastIndexOf("id"));
+        filteredResponseString = filteredResponseString.substring(4, filteredResponseString.length() - 1);
+        Long Id = Long.parseLong(filteredResponseString);
+        Player returnPlayer = new Player(user, 0, Id);
         //print result
         System.out.println(response.toString());
         if(responseCode == 200){
-            return true;
+            return returnPlayer;
         }
         else{
-            return false;
+            throw new Exception();
         }
     }
 

@@ -1,6 +1,9 @@
 package com.pr.gameclient.controller;
 
+import com.pr.gameclient.Context;
+import com.pr.gameclient.Player;
 import com.pr.gameclient.models.assets.Point;
+import com.pr.gameclient.models.game.HighScore;
 import com.pr.gameclient.models.places.Bank;
 import com.pr.gameclient.models.places.Jeweler;
 import com.pr.gameclient.models.places.Museum;
@@ -26,7 +29,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -53,6 +61,7 @@ public class GameController implements Initializable {
     @FXML
     private Label scoreCounter;
     private String gameType = "police";
+    public Player activePlayer = new Player();
     Bank bank = new Bank("assetSrc", new Point(0,0));
     Museum museum = new Museum("assetSrc", new Point(0,0));
     Jeweler jeweler = new Jeweler("assetSrc", new Point(0,0));
@@ -76,10 +85,10 @@ public class GameController implements Initializable {
 
     void initMovement(String gameType){
         if(gameType.equals("robber")){
-            moveController.move(scene, robber);
+            moveController.move(scene, robber, policeman);
         }
         else{
-            moveController.move(scene, policeman);
+            moveController.move(scene, policeman, robber);
         }
     }
 
@@ -95,6 +104,9 @@ public class GameController implements Initializable {
             System.out.println("Kollision mit Museum");
             increaseScore(museum);
         } else if (robber.getBoundsInParent().intersects(policeman.getBoundsInParent())){
+            imprisonRobber();
+        }
+        else if (policeman.getBoundsInParent().intersects(robber.getBoundsInParent())){
             imprisonRobber();
         }
     }
@@ -197,9 +209,8 @@ public class GameController implements Initializable {
     public void increaseScore(Place place){
         if(payCounter == 10){
             payCounter = 0;
-            int currentScore = Integer.parseInt(scoreCounter.getText());
-            currentScore += place.getMoneyValue();
-            String currentScoreString = Integer.toString(currentScore);
+            activePlayer.setScore(activePlayer.getScore() + place.getMoneyValue());
+            String currentScoreString = Integer.toString(activePlayer.getScore());
             scoreCounter.setText(currentScoreString);
         }else {
             payCounter++;
@@ -222,10 +233,16 @@ public class GameController implements Initializable {
             System.out.println("Spiel zuende!");
             robber.relocate(0,0);
             moveController.clearInputs();
+            HighScore highScore = new HighScore("playerName",Integer.parseInt(scoreCounter.getText()));
             try{
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("GameOver.fxml"));
                 Parent root;
                 Scene sceneSwitcher;
-                root = FXMLLoader.load(getClass().getResource("GameOver.fxml"));
+                root = loader.load();
+
+                MenuController controller1 = loader.getController();
+                controller1.scoreDisplay.setText(scoreCounter.getText());
+                sendHighScore();
                 sceneSwitcher = new Scene(root);
                 Stage stage = (Stage)  imprisonedPortrait.getScene().getWindow();
                 stage.setScene(sceneSwitcher);
@@ -233,7 +250,30 @@ public class GameController implements Initializable {
             }catch(Exception e){
                 System.out.println(e.getMessage());
             }
-
         }
+    }
+
+    public void sendHighScore() throws Exception{
+        String url = "http://localhost:8080/api/rankings";
+        URL obj = new URL(url);
+        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+
+        // Add request header
+        con.setRequestMethod("POST");
+        con.setRequestProperty("Content-Type", "application/json");
+
+        // Send post request
+        con.setDoOutput(true);
+        DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+        wr.writeBytes(  "{\"user\": \"" + activePlayer.getId() + "\"," +
+                "\"points\": \"" + scoreCounter.getText() + "\"}");
+        wr.flush();
+        wr.close();
+
+        int responseCode = con.getResponseCode();
+        System.out.println("\nSending 'POST' request to URL : " + url);
+        System.out.println("Response Code : " + responseCode);
+
+
     }
 }

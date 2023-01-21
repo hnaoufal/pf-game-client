@@ -1,0 +1,51 @@
+@startuml
+left to right direction
+
+package "Domain" <<rectangle>> {
+    interface "CreateUser" {
+        +create(user: User) : User
+    }
+
+    class "CreateUserInteractor" implements CreateUser {
+        -createUser: CreateUser
+        +create(user: User) : User
+    }
+
+
+    interface "UserRepository" {
+        +save(user: User) : User
+    }
+
+    class User {
+        -id: int
+        -name: String
+        -email: String
+    }
+}
+
+package "Application" <<rectangle>> {
+    class "UserController" {
+        -createUserInteractor : CreateUserInteractor
+        +create(user: User) : User
+    }
+}
+
+
+
+package "Infrastructure Layer" <<rectangle>> {
+    class "HibernateUserRepository" implements UserRepository {
+        -sessionFactory: SessionFactory
+        +save(user: User) : User
+    }
+
+    class "MySQLDatabase" {
+        +save(user: User) : User
+    }
+}
+
+
+"CreateUserInteractor" --> "UserRepository"
+"UserController" -> "CreateUser"
+"User" -> "CreateUserInteractor"
+
+@enduml

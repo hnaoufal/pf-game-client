@@ -85,10 +85,10 @@ public class GameController implements Initializable {
 
     void initMovement(String gameType){
         if(gameType.equals("robber")){
-            moveController.move(scene, robber);
+            moveController.move(scene, robber, policeman);
         }
         else{
-            moveController.move(scene, policeman);
+            moveController.move(scene, policeman, robber);
         }
     }
 
@@ -104,6 +104,9 @@ public class GameController implements Initializable {
             System.out.println("Kollision mit Museum");
             increaseScore(museum);
         } else if (robber.getBoundsInParent().intersects(policeman.getBoundsInParent())){
+            imprisonRobber();
+        }
+        else if (policeman.getBoundsInParent().intersects(robber.getBoundsInParent())){
             imprisonRobber();
         }
     }

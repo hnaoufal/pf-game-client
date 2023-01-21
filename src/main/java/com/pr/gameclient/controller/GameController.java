@@ -230,7 +230,7 @@ public class GameController implements Initializable {
         Node imprisonedPortrait = robberIconPanel.getChildren().get(imprisonedRobbers);
         imprisonedPortrait.setOpacity(0.2);
         imprisonedRobbers++;
-        if(imprisonedRobbers == 1){
+        if(imprisonedRobbers == 5){
             System.out.println("Spiel zuende!");
             robber.relocate(0,0);
             moveController.clearInputs();

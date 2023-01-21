@@ -14,6 +14,7 @@ import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Bounds;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -91,21 +92,22 @@ public class GameController implements Initializable {
 
     // Kollisionserkennung mithilfe der integrierten JavaFX-Funktion .intersects
     public void collision(ImageView robber, ImageView policeman, ImageView collisionBank, ImageView collisionJeweler, ImageView collisionMuseum){
-        if (robber.getBoundsInParent().intersects(collisionBank.getBoundsInParent())){
-            System.out.println("Kollision mit Bank");
+        Bounds robberBounds = robber.getBoundsInParent();
+        Bounds policeBounds = policeman.getBoundsInParent();
+
+        if (robberBounds.intersects(policeBounds) || policeBounds.intersects(robberBounds)){
+            imprisonRobber();
+            return;
+        }
+
+        if (robberBounds.intersects(collisionBank.getBoundsInParent())){
             increaseScore(bank);
-        } else if (robber.getBoundsInParent().intersects(collisionJeweler.getBoundsInParent())){
-            System.out.println("Kollision mit Juweliergeschaeft");
+        } else if (robberBounds.intersects(collisionJeweler.getBoundsInParent())){
             increaseScore(jeweler);
-        } else if (robber.getBoundsInParent().intersects(collisionMuseum.getBoundsInParent())){
-            System.out.println("Kollision mit Museum");
+        } else if (robberBounds.intersects(collisionMuseum.getBoundsInParent())){
             increaseScore(museum);
-        } else if (robber.getBoundsInParent().intersects(policeman.getBoundsInParent())){
-            imprisonRobber();
         }
-        else if (policeman.getBoundsInParent().intersects(robber.getBoundsInParent())){
-            imprisonRobber();
-        }
+
     }
 
     // Button "Zurück" zu den Settings

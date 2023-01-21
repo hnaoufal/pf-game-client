@@ -3,12 +3,6 @@ package com.pr.gameclient.controller;
 import com.pr.gameclient.models.Player;
 import com.pr.gameclient.helpers.HTTPClient;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
 public class LoginController {
 
     public Player LoginAction(String user, String password) throws Exception{

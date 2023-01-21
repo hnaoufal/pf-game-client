@@ -2,6 +2,7 @@ package com.pr.gameclient.controller;
 
 import com.pr.gameclient.Context;
 import com.pr.gameclient.Player;
+import com.pr.gameclient.helpers.HTTPClient;
 import com.pr.gameclient.models.assets.Point;
 import com.pr.gameclient.models.game.HighScore;
 import com.pr.gameclient.models.places.Bank;
@@ -36,6 +37,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.http.HttpRequest;
 import java.util.ResourceBundle;
 
 public class GameController implements Initializable {
@@ -229,11 +231,10 @@ public class GameController implements Initializable {
         Node imprisonedPortrait = robberIconPanel.getChildren().get(imprisonedRobbers);
         imprisonedPortrait.setOpacity(0.2);
         imprisonedRobbers++;
-        if(imprisonedRobbers == 5){
+        if(imprisonedRobbers == 1){
             System.out.println("Spiel zuende!");
             robber.relocate(0,0);
             moveController.clearInputs();
-            HighScore highScore = new HighScore("playerName",Integer.parseInt(scoreCounter.getText()));
             try{
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("GameOver.fxml"));
                 Parent root;
@@ -254,26 +255,8 @@ public class GameController implements Initializable {
     }
 
     public void sendHighScore() throws Exception{
-        String url = "http://localhost:8080/api/rankings";
-        URL obj = new URL(url);
-        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-
-        // Add request header
-        con.setRequestMethod("POST");
-        con.setRequestProperty("Content-Type", "application/json");
-
-        // Send post request
-        con.setDoOutput(true);
-        DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-        wr.writeBytes(  "{\"user\": \"" + activePlayer.getId() + "\"," +
-                "\"points\": \"" + scoreCounter.getText() + "\"}");
-        wr.flush();
-        wr.close();
-
-        int responseCode = con.getResponseCode();
-        System.out.println("\nSending 'POST' request to URL : " + url);
-        System.out.println("Response Code : " + responseCode);
-
-
+        String toSend = "{\"user\": \"" + activePlayer.getId() + "\"," +
+                "\"points\": \"" + scoreCounter.getText() + "\"}";
+        HTTPClient.post("http://localhost:8080/api/rankings", toSend);
     }
 }

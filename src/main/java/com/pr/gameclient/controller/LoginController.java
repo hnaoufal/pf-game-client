@@ -1,60 +1,30 @@
 package com.pr.gameclient.controller;
 
 import com.pr.gameclient.Player;
+import com.pr.gameclient.helpers.HTTPClient;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.http.HttpResponse;
 
 public class LoginController {
 
     public Player LoginAction(String user, String password) throws Exception{
-        String url = "http://localhost:8080/api/login";
-        URL obj = new URL(url);
-        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+        String toSend = "{\"email\": \"" + user + "\",\"password\": \"" + password + "\"}";
+        String responseString = HTTPClient.post("http://localhost:8080/api/login", toSend);
 
-        // Add request header
-        con.setRequestMethod("POST");
-        con.setRequestProperty("Content-Type", "application/json");
+        if(responseString.contains("error")){throw new Exception();}
 
-        // Send post request
-        con.setDoOutput(true);
-        DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-        wr.writeBytes("{\"email\": \"" + user + "\",\"password\": \"" + password + "\"}");
-        wr.flush();
-        wr.close();
-
-        int responseCode = con.getResponseCode();
-        System.out.println("\nSending 'POST' request to URL : " + url);
-        System.out.println("Response Code : " + responseCode);
-
-        if(responseCode != 200){throw new Exception();}
-
-        BufferedReader in = new BufferedReader(
-                new InputStreamReader(con.getInputStream()));
-        String inputLine;
-        StringBuffer response = new StringBuffer();
-
-        while ((inputLine = in.readLine()) != null) {
-            response.append(inputLine);
-        }
-        in.close();
-
-        String responseString = response.toString();
         String filteredResponseString = responseString.substring(responseString.lastIndexOf("id"));
         filteredResponseString = filteredResponseString.substring(4, filteredResponseString.length() - 1);
         Long Id = Long.parseLong(filteredResponseString);
         Player returnPlayer = new Player(user, 0, Id);
         //print result
-        System.out.println(response.toString());
-        if(responseCode == 200){
-            return returnPlayer;
-        }
-        else{
-            throw new Exception();
-        }
+        System.out.println(responseString);
+        return returnPlayer;
     }
 
     public boolean RegisterAction(String user, String email, String password) throws Exception{
